@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import logo from "../../img/image.png"
+import { getLogado } from '../components/auth';
+import { useEffect } from 'react';
+
+
+
 
 export default function Header() {
     const [open, setOpen] = useState(false);
@@ -13,13 +18,30 @@ export default function Header() {
         { name: "Inicio", link: "/" },
         { name: "Reservas", link: "/" },
         { name: "Regras", link: "/" },
+        { name: "Entrar", link: "/loginPage" },
+
     ];
 
+    useEffect(() => {
+        const logado = getLogado();
+        if (logado) {
+            links[3] = { name: "Perfil", link: "/" };
+
+        }
+        console.log('Component mounted');
+    }, []);
+
+    
+
+
+
+
     return (
-        <header  className="md:shadow-md md:justify-between md:flex bg-mauaBlue padding text-cyan-50 text-2xl font-bold ">
+        <header className="md:shadow-md md:justify-between md:flex bg-mauaBlue padding text-cyan-50 text-2xl font-bold ">
+
             <div>
                 <a href="#">
-                    <Image src={logo} alt="Logo" className="h-20 w-auto p-3 "/>
+                    <Image src={logo} alt="Logo" className="h-20 w-auto p-3 " />
                 </a>
             </div>
 
