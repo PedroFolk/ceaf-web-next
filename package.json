@@ -1,12 +1,16 @@
 {
   "name": "ceaf-web-next",
   "version": "0.1.0",
+  "homepage": "https://pedrofolk.github.io/ceaf-web-next/",
+
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@types/node": "18.15.13",
@@ -17,6 +21,7 @@
     "eslint-config-next": "13.3.1",
     "firebase": "^9.20.0",
     "firebaseui": "^4.8.0",
+    "gh-pages": "^5.0.0",
     "next": "^13.3.1",
     "postcss": "8.4.23",
     "react": "^18.2.0",
