@@ -17,7 +17,7 @@ const SignInScreen = () => {
       // Redirect to home page on successful sign-in
       
 
-      window.location.href = "/";
+      window.location.href = "/user";
       logado = true;
       
     } catch (error) {
@@ -30,7 +30,7 @@ const SignInScreen = () => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         // Redirect to home page if the user is signed in
-        window.location.href = "/";
+        window.location.href = "/user";
       }
     });
 
