@@ -3,8 +3,8 @@ import Cont from './components/cont'
 
 const links = [
   { name: "Inicio", link: "/" },
-  { name: "Reservas", link: "/" },
-  { name: "Regras", link: "/" },
+  { name: "Reservas", link: "/reservas" },
+  { name: "Regras", link: "/regras" },
   { name: "Entrar", link: "/loginPage" },
 ];
 
