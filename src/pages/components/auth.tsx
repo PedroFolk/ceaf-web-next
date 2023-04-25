@@ -23,7 +23,6 @@ const SignInScreen = () => {
       if (user) {
 
         const username = user.displayName;
-        console.log(username);
         window.location.href = "/user";
         logado = true;
         // do something with the username variable here
@@ -40,7 +39,6 @@ const SignInScreen = () => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         const username = user.displayName;
-        console.log(username);
 
         // Redirect to home page if the user is signed in
 
