@@ -8,6 +8,8 @@ import githubtext from "../../img/GitHub-Logos/GitHub_Logo_White.png"
 const auth = getAuth(app);
 const provider = new GithubAuthProvider();
 var logado = false;
+const user = auth.currentUser;
+const username = "";
 
 const SignInScreen = () => {
 
@@ -15,11 +17,19 @@ const SignInScreen = () => {
     try {
       await signInWithPopup(auth, provider);
       // Redirect to home page on successful sign-in
-      
 
-      window.location.href = "/user";
-      logado = true;
-      
+
+
+      if (user) {
+
+        const username = user.displayName;
+        console.log(username);
+        window.location.href = "/user";
+        logado = true;
+        // do something with the username variable here
+      } else {
+        // handle the case where user is null
+      }
     } catch (error) {
       console.error(error);
     }
@@ -29,7 +39,11 @@ const SignInScreen = () => {
     // Check if the user is already signed in
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
+        const username = user.displayName;
+        console.log(username);
+
         // Redirect to home page if the user is signed in
+
         window.location.href = "/user";
       }
     });
@@ -50,6 +64,8 @@ const SignInScreen = () => {
     </div>
   );
 };
+
+export const displayName = user ? user.displayName : null;
 
 export const getLogado = () => logado;
 export default SignInScreen;

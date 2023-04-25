@@ -10,7 +10,7 @@ interface HeaderProps {
 
 
 
-export default function Header({ links }: HeaderProps) {
+export default function Header({ links=[] }: HeaderProps) {
     const [open, setOpen] = useState(false);
 
     const toggleMenu = () => {

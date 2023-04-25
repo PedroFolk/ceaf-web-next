@@ -1,11 +1,13 @@
 import Header from './components/header'
 import Cont from './components/cont'
+import { displayName } from './components/auth';
+const usernameString = displayName ? displayName.toString() : '';
 
 const links = [
   { name: "Inicio", link: "/user" },
   { name: "Reservas", link: "/reservas" },
   { name: "Regras", link: "/regras" },
-  { name: "Perfil", link: "/perfil" },
+  { name: usernameString, link: "/perfil" },
 ];
 
 export default function Home() {
