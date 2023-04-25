@@ -18,7 +18,7 @@ export default function Header() {
         { name: "Inicio", link: "/" },
         { name: "Reservas", link: "/" },
         { name: "Regras", link: "/" },
-        { name: "Teste", link: "/loginPage" },
+        { name: "Entrar", link: "/loginPage" },
 
     ];
 
