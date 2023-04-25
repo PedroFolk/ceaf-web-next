@@ -4,34 +4,30 @@ import logo from "../../img/image.png"
 import { getLogado } from '../components/auth';
 import { useEffect } from 'react';
 
+interface HeaderProps {
+    links: Array<{ name: string, link: string }>;
+}
 
 
 
-export default function Header() {
+export default function Header({ links }:HeaderProps) {
     const [open, setOpen] = useState(false);
 
     const toggleMenu = () => {
         setOpen(!open);
     };
 
-    const links = [
-        { name: "Inicio", link: "/" },
-        { name: "Reservas", link: "/" },
-        { name: "Regras", link: "/" },
-        { name: "Entrar", link: "/loginPage" },
 
-    ];
 
     useEffect(() => {
         const logado = getLogado();
         if (logado) {
-            links[3] = { name: "Perfil", link: "/" };
 
         }
         console.log('Component mounted');
     }, []);
 
-    
+
 
 
 

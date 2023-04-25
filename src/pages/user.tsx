@@ -5,7 +5,7 @@ const links = [
   { name: "Inicio", link: "/" },
   { name: "Reservas", link: "/" },
   { name: "Regras", link: "/" },
-  { name: "Entrar", link: "/loginPage" },
+  { name: "Perfil", link: "/" },
 ];
 
 export default function Home() {
