@@ -33,7 +33,7 @@ export default function Header({ links=[] }: HeaderProps) {
 
 
     return (
-        <header className="md:shadow-md md:justify-between md:flex bg-mauaBlue padding text-cyan-50 text-2xl font-bold ">
+        <header className="md:shadow-md md:justify-between md:flex bg-mauaRed padding text-cyan-50 text-2xl font-bold ">
 
             <div>
                 <a href="#">
@@ -57,6 +57,7 @@ export default function Header({ links=[] }: HeaderProps) {
 
                     </a>
                 ))}
+                
             </nav>
         </header>
     );
