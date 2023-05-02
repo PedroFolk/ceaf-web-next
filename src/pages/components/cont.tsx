@@ -10,7 +10,7 @@ export default function Cont() {
         <main>
             <div className="flex-col my-5 space-y-5 mx-3">
                 <div className="sm:flex space-y-5 sm:space-y-0">
-                    <div className="bg-mauaBrown ml-2.5 mr-5 rounded-3xl shadow-md flex flex-col md:flex-row sm:w-1/2 ">
+                    <a href="/pagSelecao" className="bg-mauaBrown ml-2.5 mr-5 rounded-3xl shadow-md flex flex-col md:flex-row sm:w-1/2 ">
                         <Image src={quadra1} className="w-340 m-auto  sm:my-auto rounded-3xl" alt="Quadra" />
                         <div className="ml-5 mt-5 mr-5 text-center sm:text-left">
                             <h3>Quadras</h3>
@@ -21,9 +21,9 @@ export default function Cont() {
 
                             </p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div className="bg-mauaBrown ml-2.5 mr-5 rounded-3xl shadow-md flex flex-col md:flex-row sm:w-1/2 ">
+                    <a href="/" className="bg-mauaBrown ml-2.5 mr-5 rounded-3xl shadow-md flex flex-col md:flex-row sm:w-1/2 ">
                         <Image src={campo1} className="w-340 m-auto  sm:my-auto rounded-3xl" alt="Quadra" />
                         <div className="ml-5 mt-5 mr-5 text-center sm:text-left">
                             <h3>Campo</h3>
@@ -33,9 +33,10 @@ export default function Cont() {
                                 in sapien non mattis. Duis purus libero, scelerisque a consequat eget, maximus hendrerit ante.
                             </p>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div className="bg-mauaBrown ml-2.5 mr-5 flex flex-col rounded-3xl shadow-md sm:flex-row">
+                
+                <a href="/" className="bg-mauaBrown ml-2.5 mr-5 flex flex-col rounded-3xl shadow-md sm:flex-row">
                     <Image src={copa} className=" w-340 sm:justify-center lg:justify-right rounded-3xl" alt="Quadra" />
                     <div className="ml-5 mt-5 mr-5  text-center sm:text-left">
                         <h3>Copa Maua</h3>
@@ -44,7 +45,7 @@ export default function Cont() {
                             in sapien non mattis. Duis purus libero, scelerisque a consequat eget, maximus hendrerit ante.
                         </p>
                     </div>
-                </div>
+                </a>
             </div>
 
 

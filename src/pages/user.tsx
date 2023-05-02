@@ -1,12 +1,10 @@
 import Header from './components/header'
 import Cont from './components/cont'
-import { displayName } from './components/auth';
 
 const links = [
   { name: "Inicio", link: "/user" },
   { name: "Reservas", link: "/reservas" },
   { name: "Regras", link: "/regras" },
-  { name: displayName ? displayName.toString() : "", link: "/perfil" },
 ];
 
 function Home() {

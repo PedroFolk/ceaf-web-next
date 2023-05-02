@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import logo from "../../img/image.png"
-import { getLogado } from '../components/auth';
 import { useEffect } from 'react';
 
 interface HeaderProps {
@@ -16,21 +15,6 @@ export default function Header({ links=[] }: HeaderProps) {
     const toggleMenu = () => {
         setOpen(!open);
     };
-
-
-
-    useEffect(() => {
-        const logado = getLogado();
-        if (logado) {
-
-        }
-        console.log('Component mounted');
-    }, []);
-
-
-
-
-
 
     return (
         <header className="md:shadow-md md:justify-between md:flex bg-mauaRed padding text-cyan-50 text-2xl font-bold ">
