@@ -9,12 +9,15 @@ const links = [
   { name: displayName ? displayName.toString() : "", link: "/perfil" },
 ];
 
-export default function Home() {
+function Home() {
+  
   return (
     <>
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      <Header links={links}/>
-      <Cont/> 
+      <Header links={links} />
+      <Cont />
     </>
   );
 }
+
+export default Home;

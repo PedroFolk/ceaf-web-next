@@ -1,5 +1,5 @@
 import Header from './components/header'
-import Cont from './components/cont'
+import Regras from './components/regras'
 
 const links = [
   { name: "Inicio", link: "/" },
@@ -8,12 +8,12 @@ const links = [
   { name: "Entrar", link: "/loginPage" },
 ];
 
-export default function Home() {
+export default function regrasPage() {
   return (
     <>
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       <Header links={links}/>
-      <Cont/> 
+      <Regras/>
     </>
 
   )

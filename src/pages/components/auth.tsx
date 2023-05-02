@@ -65,5 +65,6 @@ const SignInScreen = () => {
 
 export const displayName = user ? user.displayName : null;
 
+
 export const getLogado = () => logado;
 export default SignInScreen;
