@@ -4,6 +4,7 @@ import campo1 from "../../img/Campo.jpg"
 import copa from "../../img/CopaMaua.jpg"
 
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Sele() {
     return (
@@ -13,25 +14,25 @@ export default function Sele() {
                     <h3 className="">
                         Quadra 1
                     </h3>
-                    <a href="/">
+                    <Link href="/">
                         <Image src={quadra1} alt="Quadra1" className="rounded-2xl w-80 h-80 lg:w-auto lg:h-auto" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="text-center">
                     <h3 className="">
                         Quadra 2
                     </h3>
-                    <a href="/">
+                    <Link href="/">
                         <Image src={quadra1} alt="Quadra2" className="rounded-2xl w-80 h-80 lg:w-auto lg:h-auto" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="text-center">
                     <h3 className="">
                         Quadra 3
                     </h3>
-                    <a href="/">
+                    <Link href="/">
                         <Image src={quadra1} alt="Quadra1" className="rounded-2xl w-80 h-80 lg:w-auto lg:h-auto" />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </>
