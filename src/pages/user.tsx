@@ -1,6 +1,6 @@
 import Header from './components/header'
 import Cont from './components/cont'
-import {links, linksLog} from './components/constants'
+import {links, linksLog} from '../constants'
 
 function Home() {
   

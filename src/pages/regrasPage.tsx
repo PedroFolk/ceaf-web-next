@@ -1,6 +1,6 @@
 import Header from './components/header'
 import Regras from './components/regras'
-import {links, linksLog} from './components/constants'
+import {links, linksLog} from '../constants'
 
 
 
