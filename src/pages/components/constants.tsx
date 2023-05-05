@@ -8,4 +8,4 @@ export const linksLog = [
     { nome: "Suporte", linkLog: "/suporte" },
   ];
 
-
+export default links;
