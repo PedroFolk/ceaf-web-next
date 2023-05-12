@@ -14,7 +14,7 @@ export default function Sele() {
                     <h3 className="">
                         Quadra 1
                     </h3>
-                    <Link href="dateSel">
+                    <Link href="pagSelecao2">
                         <Image src={quadra1} alt="Quadra1" className="rounded-2xl w-80 h-80 lg:w-auto lg:h-auto" />
                     </Link>
                 </div>
@@ -22,7 +22,7 @@ export default function Sele() {
                     <h3 className="">
                         Quadra 2
                     </h3>
-                    <Link href="/">
+                    <Link href="pagSelecao2">
                         <Image src={quadra1} alt="Quadra2" className="rounded-2xl w-80 h-80 lg:w-auto lg:h-auto" />
                     </Link>
                 </div>
@@ -30,7 +30,7 @@ export default function Sele() {
                     <h3 className="">
                         Quadra 3
                     </h3>
-                    <Link href="/">
+                    <Link href="pagSelecao2">
                         <Image src={quadra1} alt="Quadra1" className="rounded-2xl w-80 h-80 lg:w-auto lg:h-auto" />
                     </Link>
                 </div>

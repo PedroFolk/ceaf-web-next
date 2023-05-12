@@ -1,5 +1,5 @@
 import Header from './components/header'
-import Sele from './components/selecaoQuadra'
+import Sele from './components/selecao'
 
 const links = [
   { name: "Inicio", link: "/" },

@@ -1,5 +1,7 @@
+import PagSelecao from "./components/selecao3";
+
 import Header from './components/header'
-import {links, date, hora} from '../constants'
+import {pessoas, quadras, esportes, links} from '../constants'
 
 
 export default function pagSelecao() {
@@ -7,8 +9,9 @@ export default function pagSelecao() {
         <>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
             <Header links={links} />
-            
+            <PagSelecao pessoas={pessoas} quadras={quadras} esportes={esportes}/>            
         </>
 
     )
 }
+pagSelecao

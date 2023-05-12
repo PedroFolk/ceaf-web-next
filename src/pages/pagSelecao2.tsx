@@ -1,5 +1,5 @@
 import Header from './components/header'
-import DateSel from './components/date'
+import DateSel from './components/selecao2'
 import {links, date, hora} from '../constants'
 
 

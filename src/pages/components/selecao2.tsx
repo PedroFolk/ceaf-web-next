@@ -6,7 +6,6 @@ import copa from "../../img/CopaMaua.jpg"
 import ConfirmButton from './confirmButton'
 
 import Image from "next/image"
-import { Button } from 'rsuite';
 
 interface DateProps {
     date: { sem: string, dia: string }[];

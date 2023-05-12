@@ -25,5 +25,27 @@ export const hora = [
 ]
 
 
+export const pessoas = [
+  {pessoas: "1", selected:false},
+  {pessoas: "2", selected:false},
+  {pessoas: "3", selected:false},
+  {pessoas: "6+", selected:false},
+
+]
+export const quadras = [
+  {quadras: "Quadra 1", selected: false},
+  {quadras: "Quadra 2", selected: false},
+  {quadras: "Quadra 3", selected: false},
+  {quadras: "Quadra 4", selected: false},
+
+]
+export const esportes = [
+  {esportes: "Volei", selected: false},
+  {esportes: "Futebol", selected: false},
+  {esportes: "Tenis", selected: false},
+  {esportes: "Basquete", selected: false},
+
+]
+
 
 export default links;
