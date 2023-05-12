@@ -8,10 +8,10 @@ import Link from "next/link";
 
 interface HeaderProps {
     links: { name: string, link: string }[];
-    linksLog: { nome: string, linkLog: string }[];
+
 }
 
-export default function Header({ links = [], linksLog = [] }: HeaderProps) {
+export default function Header({ links = [] }: HeaderProps) {
     const [open, setOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -48,7 +48,7 @@ export default function Header({ links = [], linksLog = [] }: HeaderProps) {
 
                 ))}
 
-                <div className="relative w-full text-center lg:max-w-sm">
+                {/* <div className="relative w-full text-center lg:max-w-sm">
                     <select
                         className="w-auto  items-center  bg-transparent text-black sm:text-white rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600"
                         onChange={handleSelect}
@@ -62,7 +62,7 @@ export default function Header({ links = [], linksLog = [] }: HeaderProps) {
                             </option>
                         ))}
                     </select>
-                </div>
+                </div> */}
 
 
             </nav>

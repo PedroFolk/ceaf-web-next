@@ -20,6 +20,9 @@ module.exports = {
         mauaRed: "#840000",
         mauaBlue:"#004684",
         mauaBrown: "#F0C178",
+        mauaLightBrown: "#F7E0BB",
+        mauaButtonDefault: "#B25A4B",
+        mauaYelllowButton: "#FBB74C",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
