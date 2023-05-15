@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 interface Rotas {
-  rotas: string;
+  rotas?: string;
 }
 
 export default function ConfirmButton(props: Rotas) {
-  const { rotas } = props;
+  const { rotas = "#" } = props;
 
   return (
     <div className="">

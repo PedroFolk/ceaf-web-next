@@ -18,7 +18,6 @@ interface dadosFinais {
 
 export default function PagConfirma() {
     const router = useRouter();
-    const selectedValue = router.query.valor;
 
     return (
         <>
