@@ -29,7 +29,7 @@ export default function PagConfirma() {
                 <div className='flex flex-col sm:flex-row'>
                     <Image src={quadra1} alt="Quadra1" className=" shadow-md rounded-2xl w-80 h-80 lg:w-auto lg:h-96" />
                     <div className='flex flex-col space-y-10 align-middle justify-center '>
-                        <div className="flex flex-col text-4xl font-bold space-y-4 ml-40">
+                        <div className="flex flex-col text-3xl sm:text-4xl mt-5 font-bold space-y-4 sm:ml-40">
                             <h1>
                                 Nome:<span className="text-3xl font-medium"> Projeto Integrador</span>
                             </h1>
@@ -37,7 +37,7 @@ export default function PagConfirma() {
                                 RA:<span className="text-3xl font-medium"> 22.000000-0</span>
                             </h1>
                         </div>
-                        <div className="flex flex-col text-4xl font-bold space-y-4 ml-40">
+                        <div className="flex flex-col text-3xl sm:text-4xl font-bold space-y-4 sm:ml-40">
                             <h1>
                                 Quadra:<span className="text-3xl font-medium"> Quadra 1</span>
                             </h1>
@@ -52,7 +52,7 @@ export default function PagConfirma() {
                 </div>
 
                 <div className="mt-10 flex flex-col sm:flex-row ">
-                    <div className="text-4xl font-bold space-y-4 ">
+                    <div className="text-3xl sm:text-4xl mb-4 font-bold space-y-4 ">
                         <h1>
                             Data:<span className="text-3xl font-medium"> Sexta, 12 de Maio</span>
                         </h1>
@@ -60,12 +60,12 @@ export default function PagConfirma() {
                             Horario:<span className="text-3xl font-medium"> 12:00 </span>
                         </h1>
                     </div>
-                    <div className="m-auto flex flex-col space-x-10 text-right space-y-2">
+                    <div className="m-auto flex flex-col space-x-10 text-left sm:text-right space-y-2">
                         <div className=" flex space-x-2">
                             <input id="default-checkbox" type="checkbox" value="" className="w-6" />
-                            <h1 className="font-bold text-2xl">
+                            <h1 className="my-4 sm:my-0 font-bold text-2xl">
                                 Declaro que li e aceito os <span className="text-mauaRed underline"><Link href={"#"}>termos de uso</Link></span> das quadras.
-                            </h1>
+                            </h1> 
                         </div>
                         <ConfirmButton rotas="pagSelecao4"/>
 

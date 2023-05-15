@@ -17,16 +17,14 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
     return (
         <div className='  sm:flex'>
             <div className="flex flex-col mt-5 sm:ml-4 mr-4">
-                
-                <Link href="/">
-                    <Image src={quadra1} alt="Quadra1" className=" mx-4 sm:mx-0 rounded-2xl w-80 h-80 lg:w-auto lg:h-96" />
-                </Link>
+
+                <Image src={quadra1} alt="Quadra1" className=" mx-4 sm:mx-0 rounded-2xl w-80 h-80 lg:w-auto lg:h-96" />
                 <div className=' bg-mauaBrown my-4 space-y-10 text-4xl rounded-r-3xl sm:rounded-3xl p-2 '>
                     <h1 className='flex text-center flex-col '>
                         <span className='mb-5 font-bold'>Data</span>Sexta, 20 de Maio
                     </h1>
                     <h1 className='flex text-center flex-col'>
-                    <span className='mb-5 font-bold'>Horario</span>13:00
+                        <span className='mb-5 font-bold'>Horario</span>13:00
                     </h1>
                 </div>
             </div>
