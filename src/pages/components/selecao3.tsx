@@ -66,7 +66,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                             <label className=' font-bold'>Quadra 1</label>
                             <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1'>
                                 {quadras.map((quadras) => (
-                                    <option value={quadras.value} className='text-left'>
+                                    <option key={quadras.label} value={quadras.value} className='text-left'>
                                         {quadras.label}
                                     </option>
                                 ))}
@@ -77,7 +77,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                             <label className=' font-bold'>Esporte</label>
                             <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1'>
                                 {esportes.map((esportes) => (
-                                    <option value={esportes.value} className='text-left'>
+                                    <option key={esportes.label} value={esportes.value} className='text-left'>
                                         {esportes.label}
                                     </option>
                                 ))}
@@ -88,7 +88,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                             <label className=' font-bold'>Qnt. Pessoas</label>
                             <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1'>
                                 {pessoas.map((pessoas) => (
-                                    <option value={pessoas.value} className='text-center'>
+                                    <option key={pessoas.label} value={pessoas.value} className='text-center'>
                                         {pessoas.label}
                                     </option>
                                 ))}

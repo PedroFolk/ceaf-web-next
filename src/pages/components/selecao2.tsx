@@ -43,7 +43,7 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
                         <div>
                             <div className='  flex text-center justify-center bg-mauaLightBrown drop-shadow-lg ml-4 rounded-l-xl align-middle  space-x-10'>
                                 {date.map((date) => (
-                                    <label className="sm:text-2xl flex flex-col font-bold md:text-white md:hover:text-gray-300 text-white text-lg"  >
+                                    <label key={date.dia} className="sm:text-2xl flex flex-col font-bold md:text-white md:hover:text-gray-300 text-white text-lg"  >
                                         <button className=' text-black p-2 rounded-xl focus:bg-mauaRed  focus:text-white' name="date" >
                                             {date.sem}
                                             <br />
@@ -63,7 +63,7 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
                     <div>
                         <div className='mb-10 flex flex-wrap text-center justify-center sm:bg-mauaLightBrown ml-4 rounded-l-xl align-middle'>
                             {hora.map((hora) => (
-                                <label className="p-2 font-bold md:text-white md:hover:text-gray-300 text-white text-3xl justify-right"  >
+                                <label key={hora.hora} className="p-2 font-bold md:text-white md:hover:text-gray-300 text-white text-3xl justify-right"  >
                                     <button className='bg-mauaButtonDefault p-2 rounded-xl focus:bg-mauaYelllowButton drop-shadow-lg focus:text-white' name="date" >
                                         {hora.hora}
                                     </button>
