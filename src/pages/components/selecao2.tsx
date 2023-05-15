@@ -77,7 +77,7 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
                         a
                     </div>
                 </div>
-                <ConfirmButton />
+                <ConfirmButton rotas='pagSelecao3' />
 
             </div>
 

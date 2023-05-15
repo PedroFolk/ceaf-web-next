@@ -25,27 +25,44 @@ export const hora = [
 ]
 
 
-export const pessoas = [
-  {pessoas: "1", selected:false},
-  {pessoas: "2", selected:false},
-  {pessoas: "3", selected:false},
-  {pessoas: "6+", selected:false},
-
-]
-export const quadras = [
-  {quadras: "Quadra 1", selected: false},
-  {quadras: "Quadra 2", selected: false},
-  {quadras: "Quadra 3", selected: false},
-  {quadras: "Quadra 4", selected: false},
-
-]
 export const esportes = [
-  {esportes: "Volei", selected: false},
-  {esportes: "Futebol", selected: false},
-  {esportes: "Tenis", selected: false},
-  {esportes: "Basquete", selected: false},
+  { value: "futebol", label: "Futebol" },
+  { value: "basquete", label: "Basquete" },
+  { value: "tenis", label: "Tênis" },
+  { value: "volei", label: "Volei" },
 
-]
+];
 
+export const pessoas = [
+  { value: "3", label: "3 pessoas" },
+  { value: "4", label: "4 pessoas" },
+  { value: "5", label: "5 pessoas" },
+  { value: "6+", label: "6+ pessoas" },
+
+];
+
+export const quadras = [
+  { value: "quadra1", label: "Quadra 1" },
+  { value: "quadra2", label: "Quadra 2" },
+  { value: "quadra3", label: "Quadra 3" },
+];
+
+
+
+export class name {
+  private test:string = "Confirmar" ;
+
+  setMyTest(test:string){
+    this.test = test;
+  }
+  getMyTest(){
+    return this.test;
+  }
+
+  info():string{
+    return `${this.test}`;
+  }
+
+}
 
 export default links;
