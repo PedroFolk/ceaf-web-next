@@ -5,9 +5,9 @@ import copa from "../../img/CopaMaua.jpg"
 
 import Image from "next/image"
 
-export default function Cont() {
+export default function Regras() {
     return (
-        <main>
+        <main className="font-poppins">
             <div className="flex flex-col mt-10 ml-5 sm:ml-10 text-sm sm:text-xl">
                 <h3 className="">
                     Quadras

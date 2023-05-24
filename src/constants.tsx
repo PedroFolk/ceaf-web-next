@@ -1,26 +1,68 @@
-export const links = [
+import cookies from 'js-cookie'
+import router from "next/router";
+import { useEffect } from 'react';
+
+export let links = [
   { name: "Inicio", link: "/" },
-  { name: "Reservas", link: "/reservas" },
+  { name: "Reservas", link: "/PagReservas" },
   { name: "Regras", link: "/regrasPage" },
-  { name: "Entrar", link: "/" },
+  { name: "Entrar", link: "/loginPag" },
 
 ];
+
+export function LinkLogado() {
+  const auth = cookies.get('Autenticado')
+
+
+  useEffect(() => {
+    // console.log("AA", authUser)
+    if (auth == "True") {
+      links = [
+        { name: "Inicio", link: "/" },
+        { name: "Reservas", link: "/PagReservas" },
+        { name: "Regras", link: "/regrasPage" },
+        { name: "Perfil", link: "/profilePag" },
+      ]
+    }
+    else if (auth == "False") {
+      links = [
+        { name: "Inicio", link: "/" },
+        { name: "Reservas", link: "/PagReservas" },
+        { name: "Regras", link: "/regrasPage" },
+        { name: "Entrar", link: "/loginPag" },
+
+      ];
+    }
+  }, [auth, router]);
+
+  if (auth === null) {
+    // Renderizar um componente de carregamento ou uma mensagem de erro
+    return <div>Carregando...</div>;
+  }
+
+}
+
+
 export const date = [
-  { sem: "Seg", dia: "08/05" },
-  { sem: "Ter", dia: "09/05" },
+  { sem: "Seg", dia: "08/05"},
+  { sem: "Ter", dia: "09/05"},
   { sem: "Qua", dia: "10/05" },
+  { sem: "Qui", dia: "11/05" },
+  { sem: "Sex", dia: "12/05" },
+  { sem: "Sab", dia: "13/05" },
 
 ]
 
 export const hora = [
-  { hora: "09:00", selected: false},
-  { hora: "10:00", selected: false},
-  { hora: "11:00", selected: false},
-  { hora: "12:00", selected: false},
-  { hora: "13:00", selected: false},
-  { hora: "14:00", selected: false},
-  { hora: "15:00", selected: false},
-  { hora: "16:00", selected: false},
+  { hora: "09:00"},
+  { hora: "10:00"},
+  { hora: "11:00"},
+  { hora: "12:00"},
+  { hora: "13:00"},
+  { hora: "14:00"},
+  { hora: "15:00"},
+  { hora: "16:00"},
+  { hora: "17:00"},
 
 ]
 
@@ -48,18 +90,17 @@ export const quadras = [
 ];
 
 
-
 export class name {
-  private test:string = "Confirmar" ;
+  private test: string = "Confirmar";
 
-  setMyTest(test:string){
+  setMyTest(test: string) {
     this.test = test;
   }
-  getMyTest(){
+  getMyTest() {
     return this.test;
   }
 
-  info():string{
+  info(): string {
     return `${this.test}`;
   }
 

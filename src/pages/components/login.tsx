@@ -1,0 +1,130 @@
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { auth, loginComEmailESenha, logout } from "@/lib/authentication";
+import Link from "next/link";
+import cookies from 'js-cookie'
+import { removeAllCookies } from "@/lib/cookie";
+
+
+export default function Login() {
+
+
+
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [senhaIncorreta, setSenhaIncorreta] = useState(false);
+    const router = useRouter();
+
+    console.log(cookies.get('email'))
+    console.log(cookies.get('Autenticado'))
+
+    const handleLogOut = async () => {
+
+        logout()
+
+        removeAllCookies()
+
+    }
+
+
+
+    const handleLogin = async () => {
+        // Verifica se os campos de email e senha estão preenchidos
+        if (email.trim() === "" || senha.trim() === "") {
+            alert("Por favor, preencha todos os campos");
+
+            return;
+        }
+
+        try {
+            // Faz o login com email e senha
+            await loginComEmailESenha(email, senha);
+
+            // Usuário existe, redirecionar para outra página
+
+            cookies.set('Autenticado', 'True');
+            router.push("/");
+        } catch (error) {
+            // Tratar erros de login
+            console.log("Erro ao fazer login:", error);
+            setSenhaIncorreta(true);
+        }
+    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setEmail(value);
+        cookies.set('email', value);
+    };
+
+    return (
+        <>
+            <div className=" bg-mauaBrown m-4 rounded-3xl">
+                <div className="flex flex-col text-center py-3 sm:p-5">
+                    <h1 className="text-4xl font-bold mb-6">Entrar</h1>
+                    <div className="space-y-5 p-4 text-3xl sm:text-2xl sm:m-auto">
+                        <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 sm:justify-end">
+                            <h1 className="font-bold">EMAIL</h1>
+                            <input
+                                placeholder="email@example.com"
+                                className="shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={email}
+                                onChange={handleInputChange} // Use the new handler
+                            />
+                        </div>
+                        <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 sm:justify-end">
+                            <h1 className="font-bold">SENHA</h1>
+                            <input
+                                placeholder="*******"
+                                className="shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
+                                type="password"
+                                id="senha"
+                                name="senha"
+                                value={senha}
+                                onChange={(e) => setSenha(e.target.value)}
+                            />
+                        </div>
+
+                        {senhaIncorreta && (
+                            <p className="text-red-500  m-auto text-center text-lg font-semibold">Senha incorreta. Tente novamente.</p>
+                        )}
+
+                        <div className="m-auto text-center">
+                            <div className="p-5">
+                                <button
+                                    onClick={handleLogin}
+                                    className="text-4xl bg-mauaRed rounded-xl border-4 border-green-500  text-white px-4  font-bold mt-10 text-center align-middle"
+                                >
+                                    <h1 className="p-3">Entrar</h1>
+                                </button>
+
+                            </div>
+                        </div>
+                        <div className="m-auto text-center">
+                            <div className="">
+                                <Link href="/registroPag" className="text-3xl bg-mauaRed rounded-xl border-4 border-yellow-500 text-white px-4 py-2 font-bold mt-6 text-center align-middle">
+                                    Registrar-se
+
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="m-auto text-center">
+                            <div className="p-5">
+                                <button
+                                    onClick={handleLogOut}
+                                    className="text-3xl bg-mauaRed rounded-xl border-4 border-red-500 text-white px-4  font-bold mt-10 text-center align-middle"
+                                >
+                                    <h1 className="p-3">Sair</h1>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+
+}

@@ -1,8 +1,10 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../img/image.png"
 import { ChangeEvent } from "react";
 import Link from "next/link";
+import { LinkLogado } from "@/constants";
+
 
 
 
@@ -12,6 +14,8 @@ interface HeaderProps {
 }
 
 export default function Header({ links = [] }: HeaderProps) {
+    LinkLogado();
+
     const [open, setOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -21,8 +25,13 @@ export default function Header({ links = [] }: HeaderProps) {
         const selectedLink = event.target.value;
         window.location.href = selectedLink;
     };
+
+
+
+
+
     return (
-        <header className="md:shadow-md md:justify-between md:flex bg-mauaRed padding text-cyan-50 text-2xl font-bold ">
+        <header className="font-poppins md:shadow-md md:justify-between md:flex bg-mauaRed padding text-cyan-50 text-2xl font-bold ">
 
             <div>
                 <Link href="/">

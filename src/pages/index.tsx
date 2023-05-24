@@ -1,17 +1,12 @@
-import Header from './components/header'
-import Cont from './components/cont'
-import {links} from '../constants'
-import Footer from './components/footer'
+import links from "@/constants";
+import Routes from "../Routes/AppRoutes";
+import Cont from "./components/cont";
+import Footer from "./components/footer";
+import Header from "./components/header";
 
+import { useState } from "react";
 
-export default function Home() {
-  return (
-    <>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      <Header links={links}/>
-      <Cont/> 
-      <Footer/>
-    </>
-
-  )
+export default function App() {
+  const [authUser, setAuth] = useState<boolean>(false);
+  return <Routes/>
 }

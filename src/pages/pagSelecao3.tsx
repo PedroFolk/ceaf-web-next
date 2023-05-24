@@ -4,7 +4,7 @@ import Header from './components/header'
 import {pessoas, quadras, esportes, links} from '../constants'
 
 
-export default function pagSelecao() {
+export default function pagSelecao3() {
     return (
         <>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -14,4 +14,3 @@ export default function pagSelecao() {
 
     )
 }
-pagSelecao

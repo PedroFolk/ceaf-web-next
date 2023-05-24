@@ -9,7 +9,7 @@ import Link from "next/link"
 export default function Sele() {
     return (
         <>
-            <div className="flex flex-col space-y-5 mt-2 p-2 items-center lg:flex-row lg:space-y-0 lg:align-middle lg:mt-36 lg:p-0 lg:m-10 lg:space-x-10 ">
+            <div className="font-poppins flex flex-col space-y-5 mt-2 p-2 items-center lg:flex-row lg:space-y-0 lg:align-middle lg:mt-36 lg:p-0 lg:m-10 lg:space-x-10 ">
                 <div className="text-center">
                     <h3 className="">
                         Quadra 1

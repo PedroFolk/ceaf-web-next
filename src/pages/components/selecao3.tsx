@@ -2,25 +2,47 @@ import quadra1 from "../../img/Quadra1.jpg"
 import quadra2 from "../img/Quadra2.jpg"
 import campo1 from "../img/Campo.jpg"
 import copa from "../img/CopaMaua.jpg"
-
+import { SetStateAction, useEffect, useState } from 'react';
 import Image from "next/image"
 import ConfirmButton from './confirmButton';
+import cookies from 'js-cookie'
 
-import { name } from "../../constants"
-import { useEffect } from "react"
 
 interface SelProps {
-    esportes: { value: string, label: string }[];
-    pessoas: { value: string, label: string }[];
-    quadras: { value: string, label: string }[];
+    esportes: {  label: string }[];
+    pessoas: {  label: string }[];
+    quadras: { label: string }[];
 }
 
-const p = new name();
-p.setMyTest("Pedro")
 
 
 
 export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }: SelProps) {
+
+
+
+    const [quadra, setQuadra] = useState(cookies.get('quadra') || '');
+    const [esporte, setEsporte] = useState(cookies.get('esporte') || '');
+    const [pessoa, setPessoa] = useState(cookies.get('qntPessoa') || '');
+
+    console.log(cookies.get('dia'))
+    console.log(cookies.get('quadra'))
+    console.log(cookies.get('esporte'))
+    console.log(cookies.get('qntPessoa'))
+
+    function setQuadraAndSaveToCookie(value:string) {
+        setQuadra(value); // Define o valor de quadra usando setQuadra
+        cookies.set('quadra', value); // Armazena o valor em um cookie chamado 'quadra'
+    }
+
+    function setEsporteAndSaveToCookie(value:string) {
+        setQuadra(value); // Define o valor de quadra usando setQuadra
+        cookies.set('esporte', value); // Armazena o valor em um cookie chamado 'quadra'
+    }
+    function setPessoaAndSaveToCookie(value:string) {
+        setQuadra(value); // Define o valor de quadra usando setQuadra
+        cookies.set('qntPessoa', value); // Armazena o valor em um cookie chamado 'quadra'
+    }
 
 
     return (
@@ -28,7 +50,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
 
-            <div className='flex flex-col bg-mauaLightBrown m-4 p-6 rounded-2xl'>
+            <div className=' font-poppins flex flex-col bg-mauaLightBrown m-4 p-6 rounded-2xl'>
                 <div className='flex flex-col sm:flex-row'>
                     <Image src={quadra1} alt="Quadra1" className=" shadow-md rounded-2xl w-80 h-80 lg:w-auto lg:h-96" />
                     <div className='flex-col flex w-full m-auto  '>
@@ -64,10 +86,10 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                     <div className='flex flex-col sm:flex-row m-auto sm:space-x-10'>
                         <div className='flex flex-col text-center'>
                             <label className=' font-bold'>Quadra 1</label>
-                            <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1'>
-                                {quadras.map((quadras) => (
-                                    <option key={quadras.label} value={quadras.value} className='text-left'>
-                                        {quadras.label}
+                            <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setQuadraAndSaveToCookie(event.target.value)}>
+                                {quadras.map((quadra) => (
+                                    <option key={quadra.label} value={quadra.label} className='text-left'>
+                                        {quadra.label}
                                     </option>
                                 ))}
                             </select>
@@ -75,9 +97,9 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
 
                         <div className='flex flex-col text-center'>
                             <label className=' font-bold'>Esporte</label>
-                            <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1'>
+                            <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setEsporteAndSaveToCookie(event.target.value)}>
                                 {esportes.map((esportes) => (
-                                    <option key={esportes.label} value={esportes.value} className='text-left'>
+                                    <option key={esportes.label} value={esportes.label} className='text-left'>
                                         {esportes.label}
                                     </option>
                                 ))}
@@ -86,9 +108,9 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
 
                         <div className='flex flex-col text-center'>
                             <label className=' font-bold'>Qnt. Pessoas</label>
-                            <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1'>
+                            <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setPessoaAndSaveToCookie(event.target.value)}>
                                 {pessoas.map((pessoas) => (
-                                    <option key={pessoas.label} value={pessoas.value} className='text-center'>
+                                    <option key={pessoas.label} value={pessoas.label} className='text-center'>
                                         {pessoas.label}
                                     </option>
                                 ))}
