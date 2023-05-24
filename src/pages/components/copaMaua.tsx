@@ -2,7 +2,7 @@ import Image from "next/image";
 import copa from "../../img/CopaMaua.jpg"
 
 
-export function CopaMaua() {
+export default function CopaMaua() {
 
     return (
         <div className="  text-center m-5 rounded-2xl ">

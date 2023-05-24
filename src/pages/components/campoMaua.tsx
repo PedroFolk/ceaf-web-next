@@ -2,7 +2,7 @@ import Image from "next/image";
 import campo from "../../img/CopaMaua.jpg"
 
 
-export function CampoMaua() {
+export default function CampoMaua() {
 
     return (
         <div className=" bg-mauaBrown text-center m-5 rounded-2xl ">

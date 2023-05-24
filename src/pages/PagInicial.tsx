@@ -2,11 +2,9 @@ import Header from './components/header'
 import Cont from './components/cont'
 import { links } from '../constants'
 import Footer from './components/footer'
-import router, { Router } from 'next/router'
-import { useEffect } from 'react'
 
 
-export function Home() {
+export default function Home() {
 
 
   return (

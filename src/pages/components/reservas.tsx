@@ -1,7 +1,7 @@
 import Image from "next/image";
 import campo from "../../img/CopaMaua.jpg"
 
-export function Reservas() {
+export default function Reservas() {
 
     return (
         <div className="flex flex-col sm:flex-row bg-mauaBrown space-y-5 sm:space-y-0 sm:text-left  text-center sm:space-x-56 m-4 p-2 rounded-2xl ">

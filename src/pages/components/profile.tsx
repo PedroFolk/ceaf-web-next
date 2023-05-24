@@ -5,7 +5,7 @@ import { logout } from "@/lib/authentication";
 import { removeAllCookies } from "@/lib/cookie";
 
 
-export function Profile() {
+export default function Profile() {
 
    
 
