@@ -1,16 +1,38 @@
-import { collection, getFirestore, query, where, getDocs } from "firebase/firestore";
+import { collection, getFirestore, query, where, getDocs, deleteDoc } from "firebase/firestore";
 import { app } from "./firebase";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import cookies from 'js-cookie'
+import Cookies from "js-cookie";
+import { registrarReserva } from "./authentication";
 
 
 export const firestore = getFirestore(app);
 
 export const usuarios = collection(firestore, 'usuarios');
 export const reservasBD = collection(firestore, 'reservasBD');
+
 const Email = cookies.get('email');
+const Nome = Cookies.get('nome')
+const Ra = Cookies.get('ra')
+const dia = Cookies.get('dia')
+const hora = Cookies.get('hora')
+const quadra = Cookies.get('quadra')
+const esporte = Cookies.get('esporte')
+const pessoa = Cookies.get('pessoa')
+
+
 
 export const consulta = Email;
+export let test = ""
+
+
+
+
+
+
+
+
+
 
 export function EmailUser() {
     const [email, setTestado] = useState('');
@@ -55,7 +77,7 @@ export function NameUser() {
         };
         getUsers();
     }, []);
-
+    cookies.set('nome', name ? name.toString() : '');
     return name ? name.toString() : '';
 }
 
@@ -81,6 +103,6 @@ export function RaUser() {
         };
         getUsers();
     }, []);
-
+    cookies.set('ra', ra ? ra.toString() : '');
     return ra ? ra.toString() : '';
 }

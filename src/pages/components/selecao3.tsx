@@ -85,7 +85,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                 <div className='flex flex-col sm:flex-row m-auto mt-10 space-y-8 sm:space-x-64'>
                     <div className='flex flex-col sm:flex-row m-auto sm:space-x-10'>
                         <div className='flex flex-col text-center'>
-                            <label className=' font-bold'>Quadra 1</label>
+                            <label className=' font-bold'>Quadra</label>
                             <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setQuadraAndSaveToCookie(event.target.value)}>
                                 {quadras.map((quadra) => (
                                     <option key={quadra.label} value={quadra.label} className='text-left'>

@@ -66,6 +66,17 @@ export const hora = [
 
 ]
 
+export const reserva = [
+  { dia: "10/05/2023", hora: "15:00", local: "Quadra A" },
+  { dia: "11/05/2023", hora: "16:00", local: "Quadra B" },
+  { dia: "11/05/2023", hora: "16:00", local: "Quadra B" },
+
+];
+
+export let diaCons=""
+export let horaCons="teste"
+export let quadraCons="teste"
+
 
 export const esportes = [
   { value: "futebol", label: "Futebol" },
@@ -84,9 +95,9 @@ export const pessoas = [
 ];
 
 export const quadras = [
-  { value: "quadra1", label: "Quadra 1" },
-  { value: "quadra2", label: "Quadra 2" },
-  { value: "quadra3", label: "Quadra 3" },
+  { value: "quadraA", label: "Quadra A" },
+  { value: "quadraB", label: "Quadra B" },
+  { value: "quadraC", label: "Quadra C" },
 ];
 
 

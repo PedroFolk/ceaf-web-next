@@ -60,11 +60,12 @@ export default function Login() {
     return (
         <>
             <div className=" bg-mauaBrown m-4 rounded-3xl">
-                <div className="flex flex-col text-center py-3 sm:p-5">
-                    <h1 className="text-4xl font-bold mb-6">Entrar</h1>
+                <div className="flex flex-col divide-y-2 divide-solid divide-gray-500 text-center py-2 p-5">
+                    <h1 className="text-5xl font-bold mb-6">Entrar</h1>
+                    
                     <div className="space-y-5 p-4 text-3xl sm:text-2xl sm:m-auto">
-                        <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 sm:justify-end">
-                            <h1 className="font-bold">EMAIL</h1>
+                        <div className="flex flex-col space-y-2 ">
+                            <h1 className="font-bold text-4xl">EMAIL</h1>
                             <input
                                 placeholder="email@example.com"
                                 className="shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
@@ -75,8 +76,8 @@ export default function Login() {
                                 onChange={handleInputChange} // Use the new handler
                             />
                         </div>
-                        <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 sm:justify-end">
-                            <h1 className="font-bold">SENHA</h1>
+                        <div className="flex flex-col space-y-2 ">
+                            <h1 className="font-bold text-4xl">SENHA</h1>
                             <input
                                 placeholder="*******"
                                 className="shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
@@ -98,7 +99,7 @@ export default function Login() {
                                     onClick={handleLogin}
                                     className="text-4xl bg-mauaRed rounded-xl border-4 border-green-500  text-white px-4  font-bold mt-10 text-center align-middle"
                                 >
-                                    <h1 className="p-3">Entrar</h1>
+                                    <h1 className="px-4 py-2">Entrar</h1>
                                 </button>
 
                             </div>
@@ -111,16 +112,7 @@ export default function Login() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="m-auto text-center">
-                            <div className="p-5">
-                                <button
-                                    onClick={handleLogOut}
-                                    className="text-3xl bg-mauaRed rounded-xl border-4 border-red-500 text-white px-4  font-bold mt-10 text-center align-middle"
-                                >
-                                    <h1 className="p-3">Sair</h1>
-                                </button>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>

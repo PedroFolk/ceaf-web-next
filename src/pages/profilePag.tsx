@@ -1,32 +1,13 @@
 import Header from './components/header'
 import { links } from '../constants'
-import React, {  useEffect } from "react";
+import React from "react";
 import  Profile  from './components/profile';
-import { useRouter } from 'next/router';
-import cookies from 'js-cookie'
+
 import Footer from './components/footer';
+import ifAuth from '@/lib/ifAuth';
 
 export default function ProfilePag() {
-    const router = useRouter();
-
-
-    const auth = cookies.get('Autenticado')
-    console.log(auth)
-
-    useEffect(() => {
-        // console.log("AA", authUser)
-        if (auth !== "True" ) {
-            // Usuário não está logado, redirecionar para outra página
-            router.push('/loginPag');
-
-        }
-    }, [auth, router]);
-
-    if (auth === null) {
-        // Renderizar um componente de carregamento ou uma mensagem de erro
-        return <div>Carregando...</div>;
-    }
-
+    ifAuth();
     return (
         <>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />

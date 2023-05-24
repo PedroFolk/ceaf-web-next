@@ -6,39 +6,37 @@ import copa from "../img/CopaMaua.jpg"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from 'next/router';
+import { registrarReserva } from "@/lib/authentication";
 
-import ConfirmButton from './confirmButton';
 import Cookies from "js-cookie"
-import { RaUser, NameUser } from "@/lib/controller"
+import { RaUser, NameUser, EmailUser } from "@/lib/controller"
 import { useState } from "react"
 
 export default function PagConfirma() {
+
 
     const [checkboxChecked, setCheckboxChecked] = useState(false);
 
     const handleCheckboxChange = (event: { target: { checked: any } }) => {
         setCheckboxChecked(event.target.checked);
+
+    };
+    const handleButtonClick = async () => {
+
     };
 
-    const handleButtonClick = () => {
-        // Lógica a ser executada quando o botão for clicado
-    };
-    const router = useRouter();
+    const data = Cookies.get('dia') || "";
+    const horario = Cookies.get('hora') || "";
+
+    const esporte = Cookies.get('esporte') || "";
+    const quadra = Cookies.get('quadra') || "";
+    const pessoa = Cookies.get('qntPessoa') || "";
+
+    const nome = NameUser() || "";
+    const ra = RaUser() || "";
+    const email = EmailUser() || "";
 
 
-    const data = Cookies.get('dia');
-    const horario = Cookies.get('hora');
-
-    const esporte = Cookies.get('esporte');
-    const quadra = Cookies.get('quadra');
-    const pessoa = Cookies.get('qntPessoa');
-
-    const nome = NameUser()
-    const ra = RaUser()
-
-    const concatenatedString = data + (horario ?? '') + esporte + quadra + pessoa + nome + ra;
-
-  
 
 
     return (
@@ -91,7 +89,7 @@ export default function PagConfirma() {
                         </div>
 
                         <button disabled={!checkboxChecked} onClick={handleButtonClick} className="text-center drop-shadow-lg text-3xl font-bold bg-mauaRed border-mauaBrown border-4 px-5 py-3 w-auto rounded-3xl text-white">
-                            <Link href='/'>Confirmar</Link>
+                            Confirmar
                         </button>
 
                     </div>

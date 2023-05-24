@@ -4,14 +4,9 @@ import { signInWithEmailAndPassword, getAuth, createUserWithEmailAndPassword, se
 
 import {
     addDoc,
-    collection,
-    getFirestore,
-    query,
-    getDocs,
-    where
+
 } from "firebase/firestore"
-import { usuarios } from "./controller";
-import { useContext } from "react";
+import { reservasBD, usuarios } from "./controller";
 
 const auth = getAuth(app);
 
@@ -53,6 +48,29 @@ const registrarComEmailESenha = async (name: string, email: string, senha: strin
     }
 }
 
+const registrarReserva = async (name: string, email: string, ra: string, dia: string, hora: string, quadra: string, esporte: string, pessoa: string) => {
+    try {
+
+        await addDoc(reservasBD, {
+
+            authProvider: "local",
+            name,
+            email,
+            ra,
+            dia,
+            hora,
+            quadra,
+            esporte,
+            pessoa
+
+        })
+    } catch (error) {
+
+    }
+
+}
+
+
 const recuperarSenha = async (email: string) => {
     try {
         await sendPasswordResetEmail(auth, email);
@@ -77,5 +95,6 @@ export {
     loginComEmailESenha,
     registrarComEmailESenha,
     recuperarSenha,
-    logout
+    logout,
+    registrarReserva
 }
