@@ -9,13 +9,9 @@ import Image from "next/image"
 import { SetStateAction, useEffect, useState } from 'react';
 
 interface DateProps {
-    date: { sem: string, dia: string}[];
+    date: { sem: string, dia: string }[];
     hora: { hora: string }[];
 }
-
-
-
-
 
 export default function DateSel({ date = [], hora = [] }: DateProps) {
 
@@ -41,40 +37,35 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
         setHorario(selectedHour);
         cookies.set('hora', selectedHour);
     }, [selectedHour]);
+
+    const isButtonDisabled = !(selectedDate && selectedHour);
+
     return (
-
-
-
-        <div className='font-poppins sm:flex space-y-6'>
-            <div className="flex flex-col mt-5 sm:ml-4 sm:mr-4 space-y-6">
-
-                <Image src={quadra1} alt="Quadra1" className=" m-auto rounded-2xl w-80 h-80 lg:w-auto lg:h-96" />
-                <div className=' bg-mauaBrown space-y-10 text-4xl mx-5 rounded-2xl p-2 '>
-                    <h1 className='flex text-center flex-col '>
-                        <span className='mb-5 font-bold'>Data</span>{dia}
+        <div className='font-poppins sm:flex space-y-6 sm:space-y-0 shadow-lg'>
+            <div className="flex flex-col m-4 space-y-6">
+                <Image src={quadra1} alt="Quadra1" className="rounded-2xl w-80 h-80 m-auto sm:m-0 lg:w-auto lg:h-96" />
+                <div className='sm:flex bg-mauaBrown py-5 sm:py-8 space-y-10 sm:space-y-0 mx-5 sm:mx-0 rounded-2xl  '>
+                    <h1 className='flex  text-center text-4xl sm:m-auto flex-col '>
+                        <span className='mb-5  font-bold'>Data</span>{dia}
                     </h1>
-                    <h1 className='flex text-center flex-col'>
+                    <h1 className='flex  text-center sm:m-auto text-4xl flex-col'>
                         <span className='mb-5 font-bold'>Horario</span>{horario}
                     </h1>
                 </div>
             </div>
 
-
-
-
-            <div >
-                <div className='bg-mauaBrown  mb-4  sm:mr-4 sm:rounded-3xl space-y-6'>
+            <div>
+                <div className='bg-mauaBrown m-4 rounded-2xl space-y-6'>
                     <div className=' rounded-l-xl pt-2 sm:pb-5'>
                         <div className='text-center mt-4 ml-4'>
                             <h3 className='text-5xl'>Dia</h3>
                         </div>
                         <div>
-
-                            <div className=" overflow-x-scroll flex text-center justify-center bg-mauaLightBrown drop-shadow-lg sm:ml-4 sm:rounded-l-xl align-middle space-x-10">
+                            <div className=" overflow-x-scroll sm:overflow-auto flex text-center justify-center bg-mauaLightBrown drop-shadow-lg sm:ml-4 sm:rounded-l-xl align-middle space-x-10">
                                 {date.map((dateItem) => (
                                     <div key={dateItem.dia} className=" mx-6 sm:text-2xl flex flex-col font-bold md:text-white md:hover:text-gray-300 text-white text-lg">
                                         <button
-                                            className={`text-black p-2 rounded-xl ${selectedDate === dateItem.dia ? 'bg-mauaRed text-white' : ''}`}
+                                            className={`hover:bg-white text-black p-2 rounded-xl ${selectedDate === dateItem.dia ? 'bg-mauaRed text-white' : ''}`}
                                             onClick={() => handleButtonClick(dateItem.dia)}
                                         >
                                             {dateItem.sem}
@@ -84,7 +75,6 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
                                     </div>
                                 ))}
                             </div>
-
                         </div>
                     </div>
 
@@ -92,12 +82,11 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
                         <h3 className='text-5xl'>Horário</h3>
                     </div>
                     <div>
-
                         <div className="sm:mb-10 flex flex-wrap pb-2 text-center justify-center sm:bg-mauaLightBrown ml-4 rounded-l-xl align-middle">
                             {hora.map((hour) => (
                                 <div key={hour.hora} className="p-2 font-bold md:text-white md:hover:text-gray-300 text-white text-3xl justify-right">
                                     <button
-                                        className={`bg-mauaButtonDefault p-2 rounded-xl focus:bg-mauaYelllowButton drop-shadow-lg ${selectedHour === hour.hora ? 'text-white' : ''}`}
+                                        className={`hover:bg-white hover:text-black bg-mauaButtonDefault w-24 p-2 rounded-xl  drop-shadow-lg ${selectedHour === hour.hora ? 'text-white bg-mauaYelllowButton' : ''}`}
                                         onClick={() => handleHourClick(hour.hora)}
                                     >
                                         {hour.hora}
@@ -105,15 +94,13 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
                                 </div>
                             ))}
                         </div>
+                    </div>
 
-
+                    <div className='m-auto text-center mb-4 p-4'>
+                        <ConfirmButton rotas='pagSelecao3' disabled={isButtonDisabled} />
                     </div>
                 </div>
-                <div className='m-auto text-center mb-4'>
-                    <ConfirmButton rotas='pagSelecao3' />
-                </div>
             </div>
-
         </div>
-    )
+    );
 }

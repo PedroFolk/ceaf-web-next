@@ -1,17 +1,17 @@
 import quadra1 from "../../img/Quadra1.jpg"
-import quadra2 from "../img/Quadra2.jpg"
+import quadra2 from "../../img/Quadra2.jpg"
 import campo1 from "../img/Campo.jpg"
 import copa from "../img/CopaMaua.jpg"
 import { SetStateAction, useEffect, useState } from 'react';
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import ConfirmButton from './confirmButton';
 import cookies from 'js-cookie'
 
 
 interface SelProps {
-    esportes: {  label: string }[];
-    pessoas: {  label: string }[];
-    quadras: { label: string }[];
+    esportes: { label: string }[];
+    pessoas: { label: string }[];
+    quadras: { label: string, valImg: string }[];
 }
 
 
@@ -24,26 +24,54 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
     const [quadra, setQuadra] = useState(cookies.get('quadra') || '');
     const [esporte, setEsporte] = useState(cookies.get('esporte') || '');
     const [pessoa, setPessoa] = useState(cookies.get('qntPessoa') || '');
+    const [isConfirmed, setIsConfirmed] = useState(false);
+
 
     console.log(cookies.get('dia'))
     console.log(cookies.get('quadra'))
     console.log(cookies.get('esporte'))
     console.log(cookies.get('qntPessoa'))
 
-    function setQuadraAndSaveToCookie(value:string) {
+    function setQuadraAndSaveToCookie(value: string) {
+
         setQuadra(value); // Define o valor de quadra usando setQuadra
         cookies.set('quadra', value); // Armazena o valor em um cookie chamado 'quadra'
+
     }
 
-    function setEsporteAndSaveToCookie(value:string) {
-        setQuadra(value); // Define o valor de quadra usando setQuadra
-        cookies.set('esporte', value); // Armazena o valor em um cookie chamado 'quadra'
-    }
-    function setPessoaAndSaveToCookie(value:string) {
-        setQuadra(value); // Define o valor de quadra usando setQuadra
-        cookies.set('qntPessoa', value); // Armazena o valor em um cookie chamado 'quadra'
+    function setEsporteAndSaveToCookie(value: string) {
+        setEsporte(value); // Update the value of esporte using setEsporte
+        cookies.set('esporte', value); // Store the value in a cookie named 'esporte'
     }
 
+    function setPessoaAndSaveToCookie(value: string) {
+        setPessoa(value); // Update the value of pessoa using setPessoa
+        cookies.set('qntPessoa', value); // Store the value in a cookie named 'qntPessoa'
+    }
+
+    function quadraEscolhida(quadra: string): StaticImageData | undefined {
+        if (quadra === "Quadra A") {
+            return quadra1;
+        } else if (quadra == "Quadra B") {
+            return quadra2;
+        }
+
+        // Add more conditions for other quadras if needed
+        return undefined;
+    }
+
+    // Inside your component
+    const valImg = quadraEscolhida(quadra);
+
+
+
+    useEffect(() => {
+        if (quadra && esporte && pessoa) {
+            setIsConfirmed(true);
+        } else {
+            setIsConfirmed(false);
+        }
+    }, [quadra, esporte, pessoa]);
 
     return (
         <>
@@ -52,7 +80,11 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
 
             <div className=' font-poppins flex flex-col bg-mauaLightBrown m-4 p-6 rounded-2xl'>
                 <div className='flex flex-col sm:flex-row'>
-                    <Image src={quadra1} alt="Quadra1" className=" shadow-md rounded-2xl w-80 h-80 lg:w-auto lg:h-96" />
+
+                    {valImg && <Image src={valImg} className=" shadow-md rounded-2xl w-80 h-80 lg:w-auto lg:h-80" alt="Quadra Image" />}
+
+
+
                     <div className='flex-col flex w-full m-auto  '>
                         <h1 className='text-5xl font-bold mb-10 mt-4 sm:mt-0 m-auto'>
                             Quadra
@@ -118,7 +150,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
 
                         </div>
                     </div>
-                    <ConfirmButton rotas="pagSelecao4" />
+                    <ConfirmButton rotas="pagSelecao4" disabled={!isConfirmed} />
 
                 </div>
             </div>

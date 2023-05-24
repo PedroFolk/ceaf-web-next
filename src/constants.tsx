@@ -24,7 +24,7 @@ export function LinkLogado() {
         { name: "Perfil", link: "/profilePag" },
       ]
     }
-    else if (auth == "False") {
+    else if (auth == "False" || '') {
       links = [
         { name: "Inicio", link: "/" },
         { name: "Reservas", link: "/PagReservas" },
@@ -67,11 +67,13 @@ export const hora = [
 ]
 
 export const reserva = [
-  { dia: "10/05/2023", hora: "15:00", local: "Quadra A" },
-  { dia: "11/05/2023", hora: "16:00", local: "Quadra B" },
-  { dia: "11/05/2023", hora: "16:00", local: "Quadra B" },
+  { dia: "10/05/2023", hora: "15:00", local: "Quadra A", esporte: "" , pessoa: "" , ra: "", nome:""},
+  { dia: "10/05/2023", hora: "15:00", local: "Quadra A", esporte: "" , pessoa: "" , ra: "", nome:""},
 
 ];
+
+
+
 
 export let diaCons=""
 export let horaCons="teste"
@@ -95,9 +97,9 @@ export const pessoas = [
 ];
 
 export const quadras = [
-  { value: "quadraA", label: "Quadra A" },
-  { value: "quadraB", label: "Quadra B" },
-  { value: "quadraC", label: "Quadra C" },
+  { valorImg: "quadra1", label: "Quadra A" },
+  { valorImg: "quadra2", label: "Quadra B" },
+  { valorImg: "quadra3", label: "Quadra C" },
 ];
 
 

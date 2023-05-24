@@ -10,7 +10,7 @@ export default function PagReservas() {
         <>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
             <Header links={links} />
-            <Reservas  reserva={reserva} />
+            <Reservas reserva={[]}  />
         </>
     );
 }

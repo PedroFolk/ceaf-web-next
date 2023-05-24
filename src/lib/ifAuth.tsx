@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import cookies from 'js-cookie';
+import Cookies from 'js-cookie';
 
 export default function IfAuth() {
     const router = useRouter();
@@ -21,3 +22,5 @@ export default function IfAuth() {
     // Render your component content here
     return <div>Your component content</div>;
 }
+
+

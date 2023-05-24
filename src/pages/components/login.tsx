@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { auth, loginComEmailESenha, logout } from "@/lib/authentication";
+import { auth, loginComEmailESenha, logout, recuperarSenha } from "@/lib/authentication";
 import Link from "next/link";
 import cookies from 'js-cookie'
 import { removeAllCookies } from "@/lib/cookie";
@@ -8,7 +8,9 @@ import { removeAllCookies } from "@/lib/cookie";
 
 export default function Login() {
 
-
+    const handleEsqueciSenha = async () => {
+        recuperarSenha("pedro.o.folkmann@gmail.com")
+    }
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
@@ -62,7 +64,7 @@ export default function Login() {
             <div className=" bg-mauaBrown m-4 rounded-3xl">
                 <div className="flex flex-col divide-y-2 divide-solid divide-gray-500 text-center py-2 p-5">
                     <h1 className="text-5xl font-bold mb-6">Entrar</h1>
-                    
+
                     <div className="space-y-5 p-4 text-3xl sm:text-2xl sm:m-auto">
                         <div className="flex flex-col space-y-2 ">
                             <h1 className="font-bold text-4xl">EMAIL</h1>
@@ -112,7 +114,16 @@ export default function Login() {
                                 </Link>
                             </div>
                         </div>
+                        <div className="m-auto text-center">
+                            <div className="p-5">
+                                <button
+                                    onClick={handleEsqueciSenha}
+                                >
+                                    <h1 className="px-4 py-2">Esqueci minha senha</h1>
+                                </button>
 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

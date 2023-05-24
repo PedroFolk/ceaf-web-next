@@ -1,9 +1,9 @@
-import { collection, getFirestore, query, where, getDocs, deleteDoc } from "firebase/firestore";
-import { app } from "./firebase";
-import React, { useEffect, useState } from "react";
-import cookies from 'js-cookie'
+import { getFirestore, collection, query, getDocs, where } from "firebase/firestore";
 import Cookies from "js-cookie";
-import { registrarReserva } from "./authentication";
+import { app } from "./firebase";
+import { useState, useEffect } from "react";
+import cookies from "js-cookie";
+
 
 
 export const firestore = getFirestore(app);
@@ -23,19 +23,68 @@ const pessoa = Cookies.get('pessoa')
 
 
 export const consulta = Email;
-export let test = ""
 
+export function AllReservas() {
+    const [reservas, setReservas] = useState<any[]>([]);
 
+    useEffect(() => {
+        const getReservas = async () => {
+            try {
+                // Replace 'reservasBD' with the appropriate collection reference
+                const q = query(reservasBD);
+                const querySnapshot = await getDocs(q);
 
+                if (!querySnapshot.empty) {
+                    const reservasData = querySnapshot.docs.map((doc) => doc.data());
+                    setReservas(reservasData);
+                }
+            } catch (error) {
+                console.error("Error getting reservas: ", error);
+            }
+        };
 
+        getReservas();
+    }, []);
 
+    return reservas;
+}
 
+export function CheckAdminField() {
+    const [adminExists, setAdminExists] = useState(false);
 
+    useEffect(() => {
+        const checkAdmin = async () => {
+            try {
+                const q = query(usuarios, where('email', '==', consulta));
+                const querySnapshot = await getDocs(q);
 
+                if (!querySnapshot.empty) {
+                    const firstDoc = querySnapshot.docs[0];
+                    const data = firstDoc.data();
+                    const adminField = data.admin;
 
+                    if (adminField === true) {
+                        setAdminExists(true);
+                        Cookies.set('admin', 'True');
+                    } else {
+                        setAdminExists(false);
+                        Cookies.set('admin', '');
+                    }
+                }
+            } catch (error) {
+                console.error('Error checking admin field: ', error);
+            }
+        };
+
+        checkAdmin();
+    }, []);
+
+    return null; // Since this function is used for side effects, it doesn't need to return JSX
+}
 
 export function EmailUser() {
-    const [email, setTestado] = useState('');
+
+    const [email, setTestado] = useState(cookies.get('email') || '');
     useEffect(() => {
         const getUsers = async () => {
             try {
@@ -57,8 +106,10 @@ export function EmailUser() {
 
     return email ? email.toString() : '';
 }
+
+
 export function NameUser() {
-    const [name, setName] = useState('');
+    const [name, setName] = useState(cookies.get('nome') || '');
 
     useEffect(() => {
         const getUsers = async () => {
@@ -84,7 +135,7 @@ export function NameUser() {
 
 
 export function RaUser() {
-    const [ra, setRA] = useState('');
+    const [ra, setRA] = useState(cookies.get('ra') || '');
 
     useEffect(() => {
         const getUsers = async () => {

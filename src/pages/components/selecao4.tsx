@@ -1,7 +1,7 @@
 import quadra1 from "../../img/Quadra1.jpg"
-import quadra2 from "../img/Quadra2.jpg"
-import campo1 from "../img/Campo.jpg"
-import copa from "../img/CopaMaua.jpg"
+import quadra2 from "../../img/Quadra2.jpg"
+import campo1 from "../../img/Campo.jpg"
+import copa from "../../img/CopaMaua.jpg"
 
 import Image from "next/image"
 import Link from "next/link"
@@ -11,6 +11,7 @@ import { registrarReserva } from "@/lib/authentication";
 import Cookies from "js-cookie"
 import { RaUser, NameUser, EmailUser } from "@/lib/controller"
 import { useState } from "react"
+import { removeCookiesReserva } from "@/lib/cookie"
 
 export default function PagConfirma() {
 
@@ -21,9 +22,18 @@ export default function PagConfirma() {
         setCheckboxChecked(event.target.checked);
 
     };
+    const router = useRouter();
+
     const handleButtonClick = async () => {
+        registrarReserva(nome, email, ra, data, horario, quadra, esporte, pessoa);
+        proxPag()        
 
     };
+
+    function proxPag() {
+        router.push('/');
+        removeCookiesReserva()
+    }
 
     const data = Cookies.get('dia') || "";
     const horario = Cookies.get('hora') || "";
@@ -39,6 +49,15 @@ export default function PagConfirma() {
 
 
 
+    // Determine the image based on the value of the 'quadra' cookie
+    let quadraImage;
+    if (quadra === "Quadra A") {
+        quadraImage = quadra1;
+    } else if (quadra === "Quadra B") {
+        quadraImage = quadra2;
+    } else {
+        quadraImage = campo1; // Default image if 'quadra' cookie value is not recognized
+    }
     return (
         <>
 
@@ -47,7 +66,8 @@ export default function PagConfirma() {
 
             <div className='font-poppins flex flex-col bg-mauaLightBrown m-4 p-6 rounded-2xl'>
                 <div className='flex flex-col sm:flex-row'>
-                    <Image src={quadra1} alt="Quadra1" className=" shadow-md rounded-2xl w-80 h-80 lg:w-auto lg:h-96" />
+                    <Image src={quadraImage} alt="Quadra Image" className="shadow-md rounded-2xl w-80 h-80 lg:w-auto lg:h-96" />
+
                     <div className='flex flex-col space-y-10 align-middle justify-center '>
                         <div className="flex flex-col text-3xl sm:text-4xl mt-5 font-bold space-y-4 sm:ml-40">
                             <h1>
