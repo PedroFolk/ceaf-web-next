@@ -26,31 +26,17 @@ export default function Reservas({ reserva }: ReservasProps) {
 
     const reservasData = AllReservas();
 
-    const valImg = (item: Reserva): string | ImageLoader | null => {
-        if (item.quadra === "Quadra A") {
-            return quadra1;
-        } else if (item.quadra === "Quadra B") {
-            return quadra2;
-        }else if (item.quadra === "Quadra C") {
-            return quadra1;
-        }
-        return null;
-    };
+    
+
+
+  
 
     return (
-        <div>
+        <div className="flex flex-wrap space-x-10 mx-10 my-5">
             {reservasData.map((item: Reserva, index: number) => (
                 <div key={index}>
-                    <div className="flex flex-col bg-mauaBrown m-auto space-y-6 w-1/3 text-center my-4 p-2 rounded-2xl">
-                        <div className="m-auto">
-                            {valImg(item) && (
-                                <Image
-                                    src={valImg(item) as string}
-                                    className="shadow-md rounded-2xl w-80 h-80 lg:w-auto lg:h-80"
-                                    alt="Quadra Image"
-                                />
-                            )}
-                        </div>
+                    <div className="flex flex-col bg-mauaBrown m-auto space-y-6  text-center my-4 p-2 rounded-2xl">
+                        
                         <div className="flex flex-col space-y-2 justify-center sm:space-y-4">
                             <h1 className="text-2xl font-bold flex-nowrap">
                                 {item.name} <br /> {item.ra}
