@@ -1,6 +1,6 @@
 import Header from './components/header'
 import { links } from '../constants'
-import { CampoMaua } from './components/campoMaua'
+import CampoMaua  from './components/campoMaua'
 
 export default function PagCampo() {
 

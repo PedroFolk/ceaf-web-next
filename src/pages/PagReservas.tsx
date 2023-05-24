@@ -1,6 +1,6 @@
 import Header from './components/header';
 import { links } from '../constants';
-import { Reservas } from './components/reservas';
+import  Reservas  from './components/reservas';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 

@@ -1,7 +1,7 @@
 import Header from './components/header'
 import { links } from '../constants'
 import React, {  useEffect } from "react";
-import { Profile } from './components/profile';
+import  Profile  from './components/profile';
 import { useRouter } from 'next/router';
 import cookies from 'js-cookie'
 import Footer from './components/footer';
