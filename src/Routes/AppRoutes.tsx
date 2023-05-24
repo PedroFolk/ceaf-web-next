@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useRouter } from 'next/router';
 
-import { Home } from '../pages/PagInicial';
+import Home from '../pages/PagInicial';
 
 const Routes: FC = () => {
   const router = useRouter();
