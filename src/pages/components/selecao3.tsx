@@ -11,7 +11,7 @@ import cookies from 'js-cookie'
 interface SelProps {
     esportes: { label: string }[];
     pessoas: { label: string }[];
-    quadras: { label: string, valImg: string }[];
+    quadras: { label: string}[];
 }
 
 

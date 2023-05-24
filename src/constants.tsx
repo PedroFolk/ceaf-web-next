@@ -97,9 +97,9 @@ export const pessoas = [
 ];
 
 export const quadras = [
-  { valorImg: "quadra1", label: "Quadra A" },
-  { valorImg: "quadra2", label: "Quadra B" },
-  { valorImg: "quadra3", label: "Quadra C" },
+  { label: "Quadra A" },
+  { label: "Quadra B" },
+  { label: "Quadra C" },
 ];
 
 
