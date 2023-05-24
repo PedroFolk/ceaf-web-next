@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NameUser, EmailUser, RaUser } from "@/lib/controller";
 import { auth, registrarComEmailESenha } from "@/lib/authentication";
 import { useRouter } from "next/router";
-import AppContext from "@/lib/context";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { usuarios } from "@/lib/controller";
 
