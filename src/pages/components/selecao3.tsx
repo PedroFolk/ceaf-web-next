@@ -11,7 +11,7 @@ import cookies from 'js-cookie'
 interface SelProps {
     esportes: { label: string }[];
     pessoas: { label: string }[];
-    quadras: { label: string}[];
+    quadras: { label: string }[];
 }
 
 
@@ -93,11 +93,11 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                             Regras a serem seguidas na utilização das quadras*:<br />
                         </p>
                         <ul className='ml-4 sm:m-auto pt-4 space-y-1 text-lg list-disc'>
-                            <li>Utilizar roupas adequadas (Proibido jeans/sarja)</li>
-                            <li>Utilizar calçados fechados (Proibido chinelos/sandalias/crocs)</li>
-                            <li>Necessita mostrar comprovante da reserva</li>
-                            <li>Proibido poluição sonora (gritar palavroes, etc)</li>
-                            <li>Proibido utilizar material proprio **</li>
+                            <li>Utilizar roupas adequadas (Proibido jeans/sarja).</li>
+                            <li>Utilizar calçados fechados (Proibido chinelos/sandálias/crocs).</li>
+                            <li>Necessário apresentar comprovante da reserva.</li>
+                            <li>Proibido poluição sonora (gritar palavrões, etc.).</li>
+                            <li>Proibido utilizar material próprio**.</li>
                         </ul>
                     </div>
                 </div>
@@ -107,10 +107,10 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                     </p>
                     <ul className='text-xl space-y-1'>
                         <li>
-                            * Caso haja o descumprimento de qualquer uma das regras acima haveram consequencias disciplinares
+                            * Caso haja o descumprimento de qualquer uma das regras acima, haverá consequências disciplinares. 
                         </li>
                         <li>
-                            ** O material a ser utilizado é fornecido na hora
+                            ** O material a ser utilizado é fornecido na hora.
                         </li>
                     </ul>
                 </div>

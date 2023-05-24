@@ -31,7 +31,7 @@ export default function Header({ links = [] }: HeaderProps) {
 
 
     return (
-        <header className="font-poppins md:shadow-md md:justify-between md:flex bg-mauaRed padding text-cyan-50 text-2xl font-bold ">
+        <header className=" border-b-2 border-black font-poppins md:shadow-md md:justify-between md:flex bg-mauaRed padding text-cyan-50 text-2xl font-bold ">
 
             <div>
                 <Link href="/">
@@ -45,7 +45,7 @@ export default function Header({ links = [] }: HeaderProps) {
                 </i>
             </button>
 
-            <nav className={`${open ? "flex flex-col md:flex-row md:items-center" : "hidden md:flex"} md:flex md:items-center md:space-x-10 md:mr-10 md:min-w-auto md:align-middle md:pb-0 pb-5 md:bg-inherit md:p-0 md:space-y-0 md:text-white bg-white md:shadow-none shadow-2xl  pt-5 space-y-5`}>
+            <nav className={`${open ? " flex flex-col md:flex-row md:items-center" : "hidden md:flex"} md:flex md:items-center md:space-x-10 md:mr-10 md:min-w-auto md:align-middle md:pb-0 pb-5 md:bg-inherit md:p-0 md:space-y-0 md:text-white bg-white md:shadow-none shadow-2xl  pt-5 space-y-5`}>
                 {links.map((link) => (
                     <Link
                         key={link.name}

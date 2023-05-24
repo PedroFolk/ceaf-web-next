@@ -7,25 +7,34 @@ import Image from "next/image"
 
 export default function Regras() {
     return (
-        <main className="font-poppins">
-            <div className="flex flex-col mt-10 ml-5 sm:ml-10 text-sm sm:text-xl">
-                <h3 className="">
-                    Quadras
-                </h3>
-                <h4>
-                    Regras a serem seguidas na utilização das quadras*:
-                </h4>
-                <ol className=" list-disc list-inside space-y-2 mt-2">
-                    <li> Utilizar roupas adequadas (Proibido jeans/sarja) </li>
-                    <li>Utilizar calçados fechados (Proibido chinelos/sandalias/crocs)</li>
-                    <li>Necessita mostrar comprovante da reserva </li>
-                    <li>Proibido poluição sonora (gritar palavroes, etc)</li>
-                    <li>Proibido utilizar material proprio ** </li>
-                </ol>
-                <p className="mt-5 font-bold text-ellipsis pr-5 text-sm sm:text-xl  ">
-                    * Caso haja o descumprimento de qualquer uma das regras acima haveram consequencias disciplinares <br />
-                    ** O material a ser utilizado é fornecido na hora
-                </p>
+        <main className=" space-y-14 flex flex-col">
+            <div>
+                <h1 className="  font-bold text-5xl text-center mt-10 ">
+                    Regras
+                </h1>
+            </div>
+            <div className=" flex flex-col sm:flex-row sm:space-x-14 m-auto">
+
+
+                    <ol className=" list-disc list-inside p-2 space-y-2 text-xl ">
+                        <li className="list-none text-2xl font-semibold">Regras a serem seguidas na utilização das quadras*:</li>
+                        <li>Utilizar roupas adequadas (Proibido jeans/sarja).</li>
+                        <li>Utilizar calçados fechados (Proibido chinelos/sandálias/crocs).</li>
+                        <li>Necessário apresentar comprovante da reserva.</li>
+                        <li>Proibido poluição sonora (gritar palavrões, etc.).</li>
+                        <li>Proibido utilizar material próprio**.</li>
+                    </ol>
+                <div className="flex   ">
+                    <ol className=" m-auto font-semibold text-lg bg-mauaBrown p-2 rounded-lg shadow-xl border-2 border-black">
+                        <li>
+                            * Caso haja o descumprimento de qualquer uma das regras acima, <br/>haverá consequências disciplinares.
+                        </li>
+                        <li>
+                            ** O material a ser utilizado é fornecido na hora.
+                        </li>
+                    </ol>
+                </div>
+
 
             </div>
         </main>
