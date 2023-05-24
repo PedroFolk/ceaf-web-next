@@ -12,7 +12,6 @@ import {
 } from "firebase/firestore"
 import { usuarios } from "./controller";
 import { useContext } from "react";
-import AppContext from "./context";
 
 const auth = getAuth(app);
 
