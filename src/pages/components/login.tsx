@@ -72,7 +72,7 @@ export default function Login() {
 
     return (
         <>
-            <div className=" bg-mauaBrown m-4 rounded-3xl">
+            <div className="border-2 border-black bg-mauaBrown m-4 rounded-3xl">
                 <div className="flex flex-col divide-y-2 divide-solid divide-gray-500 text-center py-2 p-5">
                     <h1 className="text-5xl font-bold mb-6">Entrar</h1>
 
@@ -81,7 +81,7 @@ export default function Login() {
                             <h1 className="font-bold text-4xl">EMAIL</h1>
                             <input
                                 placeholder="email@example.com"
-                                className="shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
+                                className="border-2 border-black shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
                                 type="email"
                                 id="email"
                                 name="email"
@@ -93,7 +93,7 @@ export default function Login() {
                             <h1 className="font-bold text-4xl">SENHA</h1>
                             <input
                                 placeholder="*******"
-                                className="shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
+                                className="border-2 border-black shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
                                 type="password"
                                 id="senha"
                                 name="senha"
@@ -130,7 +130,7 @@ export default function Login() {
                                 <button
                                     onClick={handleEsqueciSenha}
                                 >
-                                    <h1 className="px-4 py-2">Esqueci minha senha</h1>
+                                    <h1 className="px-4 py-2 text-sm hover:text-blue-500">Esqueci minha senha</h1>
                                 </button>
 
                             </div>

@@ -127,7 +127,7 @@ export default function Registro() {
               />
             </div>
             <div className="m-auto text-center">
-              <div className="p-5">
+              <div className="sm:p-5">
                 <button
                   onClick={handleRegister}
                   className="border-4 border-mauaRed text-5xl bg-mauaYelllowButton rounded-3xl text-white px-4 py-2 font-bold mt-10 text-center align-middle"

@@ -36,17 +36,17 @@ export function removeCookiesReserva() {
 const allMyCookies = getAllCookies();
 console.log(allMyCookies);
 
-cookies.set('adm', '');
+// cookies.set('adm', '');
 
-cookies.set('nome', '');
-cookies.set('ra', '');
+// cookies.set('nome', '');
+// cookies.set('ra', '');
 
-cookies.set('dia', '');
-cookies.set('hora', '');
+// cookies.set('dia', '');
+// cookies.set('hora', '');
 
-cookies.set('quadra', '');
-cookies.set('esporte', '');
-cookies.set('qntPessoa', '');
+// cookies.set('quadra', '');
+// cookies.set('esporte', '');
+// cookies.set('qntPessoa', '');
 
 export function cookieController(){
   if(
