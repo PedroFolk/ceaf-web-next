@@ -81,7 +81,7 @@ export function SuasReservas() {
 
 
 export async function checkAdminByEmail(email: string): Promise<void> {
-    
+
     const q = query(usuarios, where("email", "==", email));
     const querySnapshot = await getDocs(q);
 
@@ -89,7 +89,7 @@ export async function checkAdminByEmail(email: string): Promise<void> {
         querySnapshot.forEach((doc) => {
             const data = doc.data();
             const isAdmin = data.admin !== undefined ? data.admin : false;
-            Cookies.set("adm", 'true');
+            Cookies.set("adm", isAdmin);
         });
     } else {
         Cookies.set("adm", "false");
