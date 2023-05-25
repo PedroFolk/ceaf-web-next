@@ -52,7 +52,7 @@ export function AllReservas() {
 
 
 
-export function suasReservas() {
+export function SuasReservas() {
     const [reservas, setReservas] = useState<any[]>([]);
     const email = cookies.get('email')
 
@@ -76,6 +76,9 @@ export function suasReservas() {
 
     return reservas;
 }
+
+
+
 
 export async function checkAdminByEmail(email: string): Promise<void> {
     

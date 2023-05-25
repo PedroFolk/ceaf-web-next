@@ -1,4 +1,4 @@
-import { suasReservas } from "@/lib/controller";
+import { SuasReservas } from "@/lib/controller";
 
 
 
@@ -23,7 +23,7 @@ export default function Reservas({ reserva }: ReservasProps) {
         return null;
     }
 
-    const reservasData = suasReservas();
+    const reservasData = SuasReservas();
 
 
 
