@@ -1,4 +1,3 @@
-import { CheckAdminField } from '@/lib/controller';
 import  Reservas  from './components/reservas';
 import Cookies from 'js-cookie';
 import  IfAuthAdmin from '@/lib/ifAuthAdmin';

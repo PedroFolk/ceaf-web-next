@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react';
 import Header from './components/header';
 import Cont from './components/cont';
 import { links } from '../constants';
 import Footer from './components/footer';
-import { EmailUser, NameUser, RaUser } from '@/lib/controller';
 
 export default function Home() {
   // const [isLoading, setIsLoading] = useState(true);
