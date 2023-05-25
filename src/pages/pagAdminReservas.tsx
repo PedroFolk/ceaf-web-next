@@ -1,9 +1,8 @@
-import  Reservas  from './components/reservas';
+import  ReservasAdm  from './components/adminReservas';
 import Cookies from 'js-cookie';
 import  IfAuthAdmin from '@/lib/ifAuthAdmin';
 
 export default function PagReservas() {
-    IfAuthAdmin();
     const auth = Cookies.get('Autenticado');
     const admin = "Admin" + Cookies.get('admin');
     console.log(admin)
@@ -12,7 +11,7 @@ export default function PagReservas() {
     return (
         <>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-            <Reservas reserva={[]}  />
+            <ReservasAdm reserva={[]}  />
         </>
     );
 }

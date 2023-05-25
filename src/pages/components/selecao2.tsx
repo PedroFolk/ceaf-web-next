@@ -43,8 +43,8 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
     return (
         <div className='font-poppins sm:flex space-y-6 sm:space-y-0 shadow-lg'>
             <div className="flex flex-col m-4 space-y-6">
-                <Image src={quadra1} alt="Quadra1" className="rounded-2xl w-80 h-80 m-auto sm:m-0 lg:w-auto lg:h-96" />
-                <div className='sm:flex bg-mauaBrown py-5 sm:py-8 space-y-10 sm:space-y-0 mx-5 sm:mx-0 rounded-2xl  '>
+                <Image src={quadra1} alt="Quadra1" className="border-2 border-black rounded-2xl w-80 h-80 m-auto sm:m-0 lg:w-auto lg:h-96" />
+                <div className='sm:flex border-2 border-black bg-mauaBrown py-5 sm:py-8 space-y-10 sm:space-y-0 mx-5 sm:mx-0 rounded-2xl  '>
                     <h1 className='flex  text-center text-4xl sm:m-auto flex-col '>
                         <span className='mb-5  font-bold'>Data</span>{dia}
                     </h1>
@@ -55,17 +55,17 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
             </div>
 
             <div>
-                <div className='bg-mauaBrown m-4 rounded-2xl space-y-6'>
+                <div className='border-2 border-black bg-mauaBrown m-4 rounded-2xl space-y-6'>
                     <div className=' rounded-l-xl pt-2 sm:pb-5'>
                         <div className='text-center mt-4 ml-4'>
                             <h3 className='text-5xl'>Dia</h3>
                         </div>
                         <div>
-                            <div className=" overflow-x-scroll sm:overflow-auto flex text-center justify-center bg-mauaLightBrown drop-shadow-lg sm:ml-4 sm:rounded-l-xl align-middle space-x-10">
+                            <div className=" overflow-x-scroll sm:overflow-auto flex text-center justify-center border-2 border-black bg-mauaLightBrown drop-shadow-lg sm:ml-4 sm:rounded-l-xl align-middle space-x-10">
                                 {date.map((dateItem) => (
-                                    <div key={dateItem.dia} className=" mx-6 sm:text-2xl flex flex-col font-bold md:text-white md:hover:text-gray-300 text-white text-lg">
+                                    <div key={dateItem.dia} className="sm:text-2xl flex flex-col font-bold md:text-white md:hover:text-gray-300 text-white text-lg">
                                         <button
-                                            className={`hover:bg-white text-black p-2 rounded-xl ${selectedDate === dateItem.dia ? 'bg-mauaRed text-white' : ''}`}
+                                            className={`hover:bg-gray-200 w-24 hover:text-black text-black p-2 rounded-xl ${selectedDate === dateItem.dia ? 'bg-mauaRed text-white  border-2  border-black' : ''}`}
                                             onClick={() => handleButtonClick(dateItem.dia)}
                                         >
                                             {dateItem.sem}
@@ -82,11 +82,11 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
                         <h3 className='text-5xl'>Horário</h3>
                     </div>
                     <div>
-                        <div className="sm:mb-10 flex flex-wrap pb-2 text-center justify-center sm:bg-mauaLightBrown ml-4 rounded-l-xl align-middle">
+                        <div className="sm:mb-10 flex flex-wrap pb-2 text-center justify-center border-2 border-black sm:bg-mauaLightBrown ml-4 rounded-l-xl align-middle">
                             {hora.map((hour) => (
                                 <div key={hour.hora} className="p-2 font-bold md:text-white md:hover:text-gray-300 text-white text-3xl justify-right">
                                     <button
-                                        className={`hover:bg-white hover:text-black bg-mauaButtonDefault w-24 p-2 rounded-xl  drop-shadow-lg ${selectedHour === hour.hora ? 'text-white bg-mauaYelllowButton' : ''}`}
+                                        className={`border-2 border-black hover:bg-gray-200 hover:text-black bg-mauaButtonDefault w-24 p-2 rounded-xl  drop-shadow-lg ${selectedHour === hour.hora ? 'text-white bg-mauaYelllowButton' : ''}`}
                                         onClick={() => handleHourClick(hour.hora)}
                                     >
                                         {hour.hora}

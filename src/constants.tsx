@@ -10,7 +10,7 @@ export let links = [
 
 ];
 
-export function LinkLogado() {
+export async function LinkLogado() {
   const auth = cookies.get('Autenticado')
 
 

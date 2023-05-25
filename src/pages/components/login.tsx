@@ -4,9 +4,11 @@ import { auth, loginComEmailESenha, logout, recuperarSenha } from "@/lib/authent
 import Link from "next/link";
 import cookies from 'js-cookie'
 import { removeAllCookies } from "@/lib/cookie";
+import { checkAdminByEmail } from "@/lib/controller";
 
 
 export default function Login() {
+
 
     const handleEsqueciSenha = async () => {
         recuperarSenha("pedro.o.folkmann@gmail.com")
@@ -20,6 +22,15 @@ export default function Login() {
     console.log(cookies.get('email'))
     console.log(cookies.get('Autenticado'))
 
+
+
+
+
+
+
+
+
+    
     const handleLogOut = async () => {
 
         logout()

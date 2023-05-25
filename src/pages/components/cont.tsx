@@ -5,8 +5,21 @@ import copa from "../../img/CopaMaua.jpg"
 
 import Image from "next/image"
 import Link from "next/link"
+import { checkAdminByEmail } from "@/lib/controller"
+import Cookies from "js-cookie"
 
 export default function Cont() {
+
+
+    const email = Cookies.get("email");
+
+    if (email == null) {
+    } else {
+        checkAdminByEmail(email)
+
+    }
+
+
     return (
         <main className="font-poppins">
             <div className="flex-col my-5 space-y-5 mx-3">
@@ -36,7 +49,7 @@ export default function Cont() {
                         </div>
                     </Link>
                 </div>
-                
+
                 <Link href="PagCopaMaua" className="bg-mauaLightBrown hover:bg-mauaBrown p-2 border-2 border-black ml-2.5 mr-5 flex flex-col rounded-xl shadow-md sm:flex-row">
                     <Image src={copa} className=" w-340  border-2 border-black sm:justify-center lg:justify-right rounded-xl" alt="Quadra" />
                     <div className="ml-5 mt-5 mr-5  text-center sm:text-left">

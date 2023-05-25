@@ -36,7 +36,7 @@ export function removeCookiesReserva() {
 const allMyCookies = getAllCookies();
 console.log(allMyCookies);
 
-cookies.set('admin', '');
+cookies.set('adm', '');
 
 cookies.set('nome', '');
 cookies.set('ra', '');

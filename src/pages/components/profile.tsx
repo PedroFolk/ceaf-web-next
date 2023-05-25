@@ -5,6 +5,7 @@ import { logout } from "@/lib/authentication";
 import { cookieController, removeAllCookies } from "@/lib/cookie";
 import Cookies from "js-cookie";
 
+
 export default function Profile() {
 
     const [name, setName] = useState("");
@@ -65,7 +66,7 @@ export default function Profile() {
                     </div>
 
                     <div>
-                        <Link href={""}>
+                        <Link href="../PagReservas">
                             <h1 className="font-normal text-2xl italic hover:text-blue-500">Historico de reservas</h1>
                         </Link>
                     </div>

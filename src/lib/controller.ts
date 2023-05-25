@@ -1,4 +1,4 @@
-import { getFirestore, collection, query, getDocs, where } from "firebase/firestore";
+import { getFirestore, collection, query, getDocs, where, orderBy } from "firebase/firestore";
 import Cookies from "js-cookie";
 import { app } from "./firebase";
 import { useState, useEffect } from "react";
@@ -31,7 +31,7 @@ export function AllReservas() {
         const getReservas = async () => {
             try {
                 // Replace 'reservasBD' with the appropriate collection reference
-                const q = query(reservasBD);
+                const q = query(reservasBD, orderBy('dia', "asc"));
                 const querySnapshot = await getDocs(q);
 
                 if (!querySnapshot.empty) {
@@ -49,6 +49,49 @@ export function AllReservas() {
     return reservas;
 }
 
+
+
+
+export function suasReservas() {
+    const [reservas, setReservas] = useState<any[]>([]);
+    const email = cookies.get('email')
+
+    useEffect(() => {
+        const getReservas = async () => {
+            try {
+                const q = query(reservasBD, where("email", "==", email));
+                const querySnapshot = await getDocs(q);
+
+                if (!querySnapshot.empty) {
+                    const reservasData = querySnapshot.docs.map((doc) => doc.data());
+                    setReservas(reservasData);
+                }
+            } catch (error) {
+                console.error("Error getting reservas: ", error);
+            }
+        };
+
+        getReservas();
+    }, []);
+
+    return reservas;
+}
+
+export async function checkAdminByEmail(email: string): Promise<void> {
+    
+    const q = query(usuarios, where("email", "==", email));
+    const querySnapshot = await getDocs(q);
+
+    if (!querySnapshot.empty) {
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            const isAdmin = data.admin !== undefined ? data.admin : false;
+            Cookies.set("adm", 'true');
+        });
+    } else {
+        Cookies.set("adm", "false");
+    }
+}
 export function CheckAdminField() {
     const [adminExists, setAdminExists] = useState(false);
 
@@ -93,7 +136,7 @@ export async function getRaByEmail(): Promise<string | null> {
 
         const email = cookies.get('email')
         const usersCollection = usuarios; // Substitua 'users' pelo nome da sua coleção
-        
+
         if (!email) {
             return ''; // Retorna null se o email for undefined ou vazio
         }

@@ -14,8 +14,7 @@ interface HeaderProps {
 }
 
 export default function Header({ links = [] }: HeaderProps) {
-    LinkLogado();
-
+    LinkLogado()
     const [open, setOpen] = useState(false);
 
     const toggleMenu = () => {
