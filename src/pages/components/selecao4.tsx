@@ -31,7 +31,7 @@ export default function PagConfirma() {
     };
 
     function proxPag() {
-        router.push('/');
+        router.push('/PagReservas');
         removeCookiesReserva()
     }
 
