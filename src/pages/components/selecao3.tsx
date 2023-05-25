@@ -63,6 +63,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
     // Inside your component
     const valImg = quadraEscolhida(quadra);
 
+    cookies.set('quadra', 'Quadra A');
 
 
     useEffect(() => {
@@ -81,7 +82,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
             <div className='border-2 border-black font-poppins flex flex-col bg-mauaLightBrown m-4 p-6 rounded-2xl'>
                 <div className='flex flex-col sm:flex-row'>
 
-                    {valImg && <Image src={valImg} className="border-2 border-black shadow-md rounded-2xl w-80 h-80 lg:w-auto lg:h-80" alt="Quadra Image" />}
+                    {valImg && <Image src={valImg} className="border-2 border-black shadow-md rounded-2xl w-80 h-80 sm:w-auto lg:h-80" alt="Quadra Image" />}
 
 
 
@@ -107,7 +108,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                     </p>
                     <ul className='text-xl space-y-1'>
                         <li>
-                            * Caso haja o descumprimento de qualquer uma das regras acima, haverá consequências disciplinares. 
+                            * Caso haja o descumprimento de qualquer uma das regras acima, haverá consequências disciplinares.
                         </li>
                         <li>
                             ** O material a ser utilizado é fornecido na hora.
@@ -118,7 +119,9 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                     <div className='flex flex-col sm:flex-row m-auto sm:space-x-10'>
                         <div className='flex flex-col text-center'>
                             <label className=' font-bold'>Quadra</label>
+
                             <select className='border-2 border-black bg-mauaYelllowButton shadow-xl rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setQuadraAndSaveToCookie(event.target.value)}>
+                                <option disabled selected value="">Selecione</option>
                                 {quadras.map((quadra) => (
                                     <option key={quadra.label} value={quadra.label} className='text-left'>
                                         {quadra.label}
@@ -130,6 +133,8 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                         <div className='flex flex-col text-center'>
                             <label className=' font-bold'>Esporte</label>
                             <select className='border-2 border-black bg-mauaYelllowButton shadow-xl rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setEsporteAndSaveToCookie(event.target.value)}>
+                                <option disabled selected value="">Selecione</option>
+
                                 {esportes.map((esportes) => (
                                     <option key={esportes.label} value={esportes.label} className='text-left'>
                                         {esportes.label}
@@ -141,6 +146,8 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                         <div className='flex flex-col text-center'>
                             <label className=' font-bold'>Qnt. Pessoas</label>
                             <select className='border-2 border-black bg-mauaYelllowButton shadow-xl rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setPessoaAndSaveToCookie(event.target.value)}>
+                                <option disabled selected value="">Selecione</option>
+
                                 {pessoas.map((pessoas) => (
                                     <option key={pessoas.label} value={pessoas.label} className='text-center'>
                                         {pessoas.label}

@@ -45,14 +45,14 @@ export default function Profile() {
     return (
 
         <div className="flex flex-col my-10 sm:my-0 sm:h-screen">
-            <div className="bg-mauaBrown m-auto rounded-2xl w-2/3">
+            <div className="border-2 border-black bg-mauaBrown m-auto rounded-2xl w-2/3">
                 <div className="text-center  space-y-8 p-6">
                     <h1 className="text-4xl sm:text-5xl font-bold">
                         {name}
                     </h1>
                     <div className="flex flex-col space-y-2">
                         <h1 className="text-3xl font-bold">Email</h1>
-                        <label className="shadow-lg w-48  bg-mauaLightBrown m-auto  sm:w-auto font-semibold text-center rounded-xl overflow-x-scroll sm:overflow-hidden text-2xl px-4 py-2">
+                        <label className="border-2 border-black shadow-lg w-48  bg-mauaLightBrown m-auto  sm:w-auto font-semibold text-center rounded-xl overflow-x-scroll sm:overflow-hidden text-2xl px-4 py-2">
                             {email}
                         </label>
 
@@ -60,7 +60,7 @@ export default function Profile() {
                     </div>
                     <div className="flex flex-col space-y-2">
                         <h1 className="text-3xl font-bold">RA</h1>
-                        <label className="shadow-lg w-48 bg-mauaLightBrown m-auto sm:w-96 font-semibold text-center rounded-xl text-2xl px-4 py-2">
+                        <label className="border-2 border-black shadow-lg w-48 bg-mauaLightBrown m-auto sm:w-96 font-semibold text-center rounded-xl text-2xl px-4 py-2">
                             {ra}
                         </label>
                     </div>
@@ -75,7 +75,7 @@ export default function Profile() {
                         <div>
                             <button
                                 onClick={handleLogOut}
-                                className="text-3xl bg-mauaRed rounded-xl border-4 border-red-500 text-white  font-bold  text-center align-middle"
+                                className=" text-3xl bg-mauaRed rounded-xl border-4 border-red-500 text-white  font-bold  text-center align-middle"
                             >
                                 <h1 className="px-4 py-1">Sair</h1>
                             </button>

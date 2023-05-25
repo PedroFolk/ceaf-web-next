@@ -3,15 +3,18 @@ import { useRouter } from "next/router";
 import { auth, loginComEmailESenha, logout, recuperarSenha } from "@/lib/authentication";
 import Link from "next/link";
 import cookies from 'js-cookie'
-import { removeAllCookies } from "@/lib/cookie";
-import { checkAdminByEmail } from "@/lib/controller";
+import { removeAllCookies, showAlert } from "@/lib/cookie";
 
 
 export default function Login() {
 
 
     const handleEsqueciSenha = async () => {
-        recuperarSenha("pedro.o.folkmann@gmail.com")
+        recuperarSenha(email)
+        if (!email) {
+            showAlert()
+            // alert("Digite seu email e clique novamente!")
+        }
     }
 
     const [email, setEmail] = useState("");
@@ -24,13 +27,14 @@ export default function Login() {
 
 
 
-
-
-
-
-
-
     
+
+
+
+
+
+
+
     const handleLogOut = async () => {
 
         logout()
@@ -72,7 +76,8 @@ export default function Login() {
 
     return (
         <>
-            <div className="border-2 border-black bg-mauaBrown m-4 rounded-3xl">
+
+            <div className=" border-2 border-black bg-mauaBrown m-4 rounded-3xl">
                 <div className="flex flex-col divide-y-2 divide-solid divide-gray-500 text-center py-2 p-5">
                     <h1 className="text-5xl font-bold mb-6">Entrar</h1>
 
@@ -103,7 +108,7 @@ export default function Login() {
                         </div>
 
                         {senhaIncorreta && (
-                            <p className="text-red-500  m-auto text-center text-lg font-semibold">Senha incorreta. Tente novamente.</p>
+                            <p className="text-red-500  m-auto text-center text-lg font-semibold">Senha ou usuario incorretos. Tente novamente.</p>
                         )}
 
                         <div className="m-auto text-center">
