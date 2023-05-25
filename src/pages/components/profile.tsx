@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
-import { NameUser, EmailUser, RaUser } from "@/lib/controller";
+import React, { useEffect, useState } from "react";
+import { getRaByEmail, getNameByEmail } from "@/lib/controller";
 import Link from "next/link";
 import { logout } from "@/lib/authentication";
-import { removeAllCookies } from "@/lib/cookie";
+import { cookieController, removeAllCookies } from "@/lib/cookie";
 import Cookies from "js-cookie";
 
 export default function Profile() {
 
-
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [ra, setRA] = useState("");
 
 
     const handleLogOut = async () => {
@@ -19,6 +21,25 @@ export default function Profile() {
 
     }
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const nameResult = await getNameByEmail();
+                setName(nameResult || "");
+
+                const emailResult = Cookies.get('email');
+                setEmail(emailResult || "");
+
+                const raResult = await getRaByEmail();
+                setRA(raResult || "");
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
 
     return (
 
@@ -26,12 +47,12 @@ export default function Profile() {
             <div className="bg-mauaBrown m-auto rounded-2xl w-2/3">
                 <div className="text-center  space-y-8 p-6">
                     <h1 className="text-4xl sm:text-5xl font-bold">
-                        {NameUser()}
+                        {name}
                     </h1>
                     <div className="flex flex-col space-y-2">
                         <h1 className="text-3xl font-bold">Email</h1>
                         <label className="shadow-lg  bg-mauaLightBrown m-auto  sm:w-96 font-bold text-center rounded-xl overflow-x-scroll sm:overflow-hidden text-2xl px-4 py-2">
-                            {EmailUser()}
+                            {email}
                         </label>
 
 
@@ -39,7 +60,7 @@ export default function Profile() {
                     <div className="flex flex-col space-y-2">
                         <h1 className="text-3xl font-bold">RA</h1>
                         <label className="shadow-lg bg-mauaLightBrown m-auto sm:w-96 font-bold text-center rounded-xl text-2xl px-4 py-2">
-                            {RaUser()}
+                            {ra}
                         </label>
                     </div>
 

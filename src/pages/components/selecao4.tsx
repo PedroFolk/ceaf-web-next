@@ -9,7 +9,6 @@ import { useRouter } from 'next/router';
 import { registrarReserva } from "@/lib/authentication";
 
 import Cookies from "js-cookie"
-import { RaUser, NameUser, EmailUser } from "@/lib/controller"
 import { useState } from "react"
 import { removeCookiesReserva } from "@/lib/cookie"
 
