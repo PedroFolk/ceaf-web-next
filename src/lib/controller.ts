@@ -121,6 +121,7 @@ export function NameUser() {
                     const firstDoc = querySnapshot.docs[0];
                     const data = firstDoc.data();
                     setName(data.name);
+                    cookies.set('name', data.name);
                 }
             } catch (error) {
                 console.error('Error getting users: ', error);
@@ -147,6 +148,8 @@ export function RaUser() {
                     const firstDoc = querySnapshot.docs[0];
                     const data = firstDoc.data();
                     setRA(data.ra);
+                    cookies.set('ra', data.ra);
+
                 }
             } catch (error) {
                 console.error('Error getting users: ', error);

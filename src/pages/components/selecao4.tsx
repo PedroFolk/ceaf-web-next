@@ -42,9 +42,9 @@ export default function PagConfirma() {
     const quadra = Cookies.get('quadra') || "";
     const pessoa = Cookies.get('qntPessoa') || "";
 
-    const nome = NameUser() || "";
-    const ra = RaUser() || "";
-    const email = EmailUser() || "";
+    const nome = Cookies.get('nome') || "";
+    const ra = Cookies.get('ra') || "";
+    const email = Cookies.get('email') || "";
 
 
 
