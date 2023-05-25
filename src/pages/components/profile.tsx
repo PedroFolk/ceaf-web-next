@@ -52,7 +52,7 @@ export default function Profile() {
                     </h1>
                     <div className="flex flex-col space-y-2">
                         <h1 className="text-3xl font-bold">Email</h1>
-                        <label className="shadow-lg  bg-mauaLightBrown m-auto  sm:w-96 font-bold text-center rounded-xl overflow-x-scroll sm:overflow-hidden text-2xl px-4 py-2">
+                        <label className="shadow-lg w-48  bg-mauaLightBrown m-auto  sm:w-auto font-semibold text-center rounded-xl overflow-x-scroll sm:overflow-hidden text-2xl px-4 py-2">
                             {email}
                         </label>
 
@@ -60,7 +60,7 @@ export default function Profile() {
                     </div>
                     <div className="flex flex-col space-y-2">
                         <h1 className="text-3xl font-bold">RA</h1>
-                        <label className="shadow-lg bg-mauaLightBrown m-auto sm:w-96 font-bold text-center rounded-xl text-2xl px-4 py-2">
+                        <label className="shadow-lg w-48 bg-mauaLightBrown m-auto sm:w-96 font-semibold text-center rounded-xl text-2xl px-4 py-2">
                             {ra}
                         </label>
                     </div>

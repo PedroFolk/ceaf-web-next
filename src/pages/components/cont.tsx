@@ -51,7 +51,7 @@ export default function Cont() {
                 </div>
 
                 <Link href="PagCopaMaua" className="bg-mauaLightBrown hover:bg-mauaBrown p-2 border-2 border-black ml-2.5 mr-5 flex flex-col rounded-xl shadow-md sm:flex-row">
-                    <Image src={copa} className=" w-340  border-2 border-black sm:justify-center lg:justify-right rounded-xl" alt="Quadra" />
+                    <Image src={copa} className="m-auto sm:m-0 w-340  border-2 border-black sm:justify-center lg:justify-right rounded-xl" alt="Quadra" />
                     <div className="ml-5 mt-5 mr-5  text-center sm:text-left">
                         <h3>Copa Maua</h3>
                         <p className=" align-middle items-center pb-5 sm:mx-10">

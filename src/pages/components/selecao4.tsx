@@ -108,7 +108,7 @@ export default function PagConfirma() {
                 </div>
 
                 <div className="mt-10 flex flex-col sm:flex-row ">
-                    <div className="text-3xl sm:text-4xl mb-4 font-bold space-y-4 ">
+                    <div className="text-3xl sm:text-4xl mb-4 font-bold space-y-4 m-auto sm:m-0">
                         <h1>
                             Data:<span className="text-3xl font-medium"> {data}</span>
                         </h1>

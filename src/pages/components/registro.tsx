@@ -73,7 +73,7 @@ export default function Registro() {
 
   return (
     <>
-      <div className="h-screen bg-mauaBrown m-4 rounded-3xl">
+      <div className="border-2 border-black h-screen bg-mauaBrown m-4 rounded-3xl">
         <div className="flex flex-col text-center py-3 sm:p-5">
           <h1 className="text-4xl font-bold mb-6">Registro</h1>
           {isRegistered && <p className="m-auto text-center text-3xl font-bold">Registro realizado com sucesso!</p>}
@@ -82,7 +82,7 @@ export default function Registro() {
               <h1 className="font-bold">NOME COMPLETO</h1>
               <input
                 placeholder="Nome Completo"
-                className="shadow-lg w-auto bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
+                className=" border-2 border-black shadow-lg w-auto bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
                 type="text"
                 id="fname"
                 name="fname"
@@ -94,7 +94,7 @@ export default function Registro() {
               <h1 className="font-bold">RA</h1>
               <input
                 placeholder="xx.xxxxx-x"
-                className="shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
+                className=" border-2 border-black shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
                 type="text"
                 id="ra"
                 name="ra"
@@ -106,7 +106,7 @@ export default function Registro() {
               <h1 className="font-bold">EMAIL</h1>
               <input
                 placeholder="email@example.com"
-                className="shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
+                className="border-2 border-black shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
                 type="email"
                 id="email"
                 name="email"
@@ -118,7 +118,7 @@ export default function Registro() {
               <h1 className="font-bold">SENHA</h1>
               <input
                 placeholder="*******"
-                className="shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
+                className=" border-2 border-black shadow-lg bg-mauaLightBrown font-bold text-center rounded-xl px-4 py-2"
                 type="password"
                 id="senha"
                 name="senha"
@@ -130,7 +130,7 @@ export default function Registro() {
               <div className="p-5">
                 <button
                   onClick={handleRegister}
-                  className="text-5xl bg-mauaRed rounded-3xl text-white px-4 py-2 font-bold mt-10 text-center align-middle"
+                  className="border-4 border-mauaRed text-5xl bg-mauaYelllowButton rounded-3xl text-white px-4 py-2 font-bold mt-10 text-center align-middle"
                 >
                   <h1 className="p-3">Registrar</h1>
                 </button>

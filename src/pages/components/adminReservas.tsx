@@ -35,7 +35,7 @@ export default function ReservasAdm({ reserva }: ReservasProps) {
     return (
         <div >
             <h1 className=" text-5xl font-bold text-center my-10 ">Todas as reservas</h1>
-            <div className="flex overflow-auto shadow-xl rounded-xl border-2 border-black px-4 py-1 hover:overflow-x-auto space-x-10 mx-10 my-5">
+            <div className="flex overflow-auto shadow-xl rounded-xl border-2 border-black px-4 py-1 hover:overflow-x-auto space-x-10 mx-2 sm:mx-10 my-5">
 
                 {reservasData.map((item: Reserva, index: number) => (
                     <div key={index} className="my-auto">

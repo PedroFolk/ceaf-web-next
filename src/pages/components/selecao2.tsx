@@ -82,7 +82,7 @@ export default function DateSel({ date = [], hora = [] }: DateProps) {
                         <h3 className='text-5xl'>Horário</h3>
                     </div>
                     <div>
-                        <div className="sm:mb-10 flex flex-wrap pb-2 text-center justify-center border-2 border-black sm:bg-mauaLightBrown ml-4 rounded-l-xl align-middle">
+                        <div className="sm:mb-10 flex flex-wrap pb-2 text-center justify-center border-0 sm:border-2 sm:border-black sm:bg-mauaLightBrown ml-4 rounded-l-xl align-middle">
                             {hora.map((hour) => (
                                 <div key={hour.hora} className="p-2 font-bold md:text-white md:hover:text-gray-300 text-white text-3xl justify-right">
                                     <button
