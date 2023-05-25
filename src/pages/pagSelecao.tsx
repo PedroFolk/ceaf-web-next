@@ -1,12 +1,8 @@
 import ifAuth from '@/lib/ifAuth';
 import Header from './components/header'
 import Sele from './components/selecao'
+import links from '@/constants';
 
-const links = [
-  { name: "Inicio", link: "/" },
-  { name: "Reservas", link: "/reservas" },
-  { name: "Regras", link: "/regrasPage" },
-];
 
 
 export default function pagSelecao() {
