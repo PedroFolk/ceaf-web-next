@@ -108,7 +108,7 @@ export default function PagConfirma() {
                             </h1>
                         </div>
 
-                        <button disabled={!checkboxChecked} onClick={handleButtonClick} className="text-center drop-shadow-lg text-3xl font-bold bg-mauaRed border-mauaBrown border-4 px-5 py-3 w-auto rounded-3xl text-white">
+                        <button disabled={!checkboxChecked} onClick={handleButtonClick} className="text-center drop-shadow-lg text-3xl font-bold bg-mauaYelllowButton border-mauaButtonDefault border-4 px-5 py-3 w-auto rounded-3xl text-white">
                             Confirmar
                         </button>
 

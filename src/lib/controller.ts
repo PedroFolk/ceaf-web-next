@@ -83,21 +83,22 @@ export function CheckAdminField() {
 }
 
 export function EmailUser() {
+    const [email, setEmail] = useState('');
 
-    const [email, setTestado] = useState(cookies.get('email') || '');
     useEffect(() => {
         const getUsers = async () => {
             try {
-                const q = query(usuarios, where('email', '==', consulta));
-                const querySnapshot = await getDocs(q);
-                console.log(q);
-                if (!querySnapshot.empty) {
-                    const firstDoc = querySnapshot.docs[0];
-                    const data = firstDoc.data();
-                    setTestado(data.email);
+                if (consulta) {
+                    const q = query(usuarios, where('email', '==', consulta));
+                    const querySnapshot = await getDocs(q);
+                    if (!querySnapshot.empty) {
+                        const firstDoc = querySnapshot.docs[0];
+                        const data = firstDoc.data();
+                        setEmail(data.email);
+                        cookies.set('email', data.email);
+                    }
                 }
             } catch (error) {
-
                 console.error('Error getting users: ', error);
             }
         };
@@ -107,21 +108,22 @@ export function EmailUser() {
     return email ? email.toString() : '';
 }
 
-
 export function NameUser() {
-    const [name, setName] = useState(cookies.get('nome') || '');
+    const [name, setName] = useState('');
+
 
     useEffect(() => {
         const getUsers = async () => {
             try {
-                const q = query(usuarios, where('email', '==', consulta));
-                const querySnapshot = await getDocs(q);
-                console.log(q);
-                if (!querySnapshot.empty) {
-                    const firstDoc = querySnapshot.docs[0];
-                    const data = firstDoc.data();
-                    setName(data.name);
-                    cookies.set('name', data.name);
+                if (consulta) {
+                    const q = query(usuarios, where('email', '==', consulta));
+                    const querySnapshot = await getDocs(q);
+                    if (!querySnapshot.empty) {
+                        const firstDoc = querySnapshot.docs[0];
+                        const data = firstDoc.data();
+                        setName(data.name);
+                        cookies.set('name', data.name);
+                    }
                 }
             } catch (error) {
                 console.error('Error getting users: ', error);
@@ -129,34 +131,32 @@ export function NameUser() {
         };
         getUsers();
     }, []);
-    cookies.set('nome', name ? name.toString() : '');
     return name ? name.toString() : '';
 }
 
-
-
 export function RaUser() {
-    const [ra, setRA] = useState(cookies.get('ra') || '');
+    const [ra, setRA] = useState('');
 
     useEffect(() => {
         const getUsers = async () => {
             try {
-                const q = query(usuarios, where('email', '==', consulta));
-                const querySnapshot = await getDocs(q);
-                console.log(q);
-                if (!querySnapshot.empty) {
-                    const firstDoc = querySnapshot.docs[0];
-                    const data = firstDoc.data();
-                    setRA(data.ra);
-                    cookies.set('ra', data.ra);
-
+                if (consulta) {
+                    const q = query(usuarios, where('email', '==', consulta));
+                    const querySnapshot = await getDocs(q);
+                    if (!querySnapshot.empty) {
+                        const firstDoc = querySnapshot.docs[0];
+                        const data = firstDoc.data();
+                        setRA(data.ra);
+                        cookies.set('name', data.ra);
+                    }
                 }
+
             } catch (error) {
                 console.error('Error getting users: ', error);
             }
         };
         getUsers();
     }, []);
-    cookies.set('ra', ra ? ra.toString() : '');
+
     return ra ? ra.toString() : '';
 }

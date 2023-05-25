@@ -3,11 +3,11 @@ import { NameUser, EmailUser, RaUser } from "@/lib/controller";
 import Link from "next/link";
 import { logout } from "@/lib/authentication";
 import { removeAllCookies } from "@/lib/cookie";
-
+import Cookies from "js-cookie";
 
 export default function Profile() {
 
-   
+
 
 
     const handleLogOut = async () => {
@@ -18,6 +18,7 @@ export default function Profile() {
         window.location.reload();
 
     }
+
 
     return (
 

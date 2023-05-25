@@ -12,7 +12,7 @@ export default function ConfirmButton(props: Rotas) {
     <div className="font-poppins">
       <Link href={disabled ? "#" : rotas}>
         <button
-          className={`text-center drop-shadow-lg text-3xl font-bold bg-mauaRed border-mauaBrown border-4 px-5 py-3 rounded-3xl text-white ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+          className={`text-center drop-shadow-lg text-3xl font-bold bg-mauaYelllowButton border-mauaRed border-4 px-5 py-3 rounded-3xl text-white ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
           disabled={disabled}
         >
           Confirmar

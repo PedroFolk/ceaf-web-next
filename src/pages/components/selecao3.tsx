@@ -118,7 +118,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
                     <div className='flex flex-col sm:flex-row m-auto sm:space-x-10'>
                         <div className='flex flex-col text-center'>
                             <label className=' font-bold'>Quadra</label>
-                            <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setQuadraAndSaveToCookie(event.target.value)}>
+                            <select className=' bg-mauaYelllowButton shadow-xl rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setQuadraAndSaveToCookie(event.target.value)}>
                                 {quadras.map((quadra) => (
                                     <option key={quadra.label} value={quadra.label} className='text-left'>
                                         {quadra.label}
@@ -129,7 +129,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
 
                         <div className='flex flex-col text-center'>
                             <label className=' font-bold'>Esporte</label>
-                            <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setEsporteAndSaveToCookie(event.target.value)}>
+                            <select className='bg-mauaYelllowButton shadow-xl rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setEsporteAndSaveToCookie(event.target.value)}>
                                 {esportes.map((esportes) => (
                                     <option key={esportes.label} value={esportes.label} className='text-left'>
                                         {esportes.label}
@@ -140,7 +140,7 @@ export default function PagSelecao({ esportes = [], pessoas = [], quadras = [] }
 
                         <div className='flex flex-col text-center'>
                             <label className=' font-bold'>Qnt. Pessoas</label>
-                            <select className='bg-mauaRed rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setPessoaAndSaveToCookie(event.target.value)}>
+                            <select className='bg-mauaYelllowButton shadow-xl rounded-3xl text-xl text-center w-40 text-white px-4 py-1' onChange={(event) => setPessoaAndSaveToCookie(event.target.value)}>
                                 {pessoas.map((pessoas) => (
                                     <option key={pessoas.label} value={pessoas.label} className='text-center'>
                                         {pessoas.label}
